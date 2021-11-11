@@ -19,7 +19,7 @@
     * [Heap](leetcode/algorithms/hash-and-heap-and-stack/heap.md)
   * [Array](leetcode/algorithms/array.md)
   * [Recursion](leetcode/algorithms/recursion.md)
-  * [Tree](leetcode/algorithms/untitled/README.md)
+  * [Tree Problem](leetcode/algorithms/untitled/README.md)
     * [426. Convert Binary Search Tree to Sorted Doubly Linked List](leetcode/algorithms/untitled/426.-convert-binary-search-tree-to-sorted-doubly-linked-list.md)
   * [Binary Search](leetcode/algorithms/binary-search-basic.md)
   * [DFS](leetcode/algorithms/dfs.md)
