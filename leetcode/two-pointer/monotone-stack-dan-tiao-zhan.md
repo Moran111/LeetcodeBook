@@ -1,0 +1,132 @@
+# Monotone Stack (单调栈）
+
+比当前元素更大的下一个元素
+
+比当前元素更大的前一个元素
+
+比当前元素更小的下一个元素
+
+比当前元素更小的前一个元素
+
+## 496. Next Greater Element I
+
+The **next greater element** of some element `x` in an array is the **first greater** element that is **to the right** of `x` in the same array.
+
+You are given two **distinct 0-indexed** integer arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`.
+
+For each `0 <= i < nums1.length`, find the index `j` such that `nums1[i] == nums2[j]` and determine the **next greater element** of `nums2[j]` in `nums2`. If there is no next greater element, then the answer for this query is `-1`.
+
+Return _an array _`ans`_ of length _`nums1.length`_ such that _`ans[i]`_ is the **next greater element** as described above._
+
+**Example 1:**
+
+```
+Input: nums1 = [4,1,2], nums2 = [1,3,4,2]
+Output: [-1,3,-1]
+Explanation: The next greater element for each value of nums1 is as follows:
+- 4 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
+- 1 is underlined in nums2 = [1,3,4,2]. The next greater element is 3.
+- 2 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
+```
+
+**Example 2:**
+
+```
+Input: nums1 = [2,4], nums2 = [1,2,3,4]
+Output: [3,-1]
+Explanation: The next greater element for each value of nums1 is as follows:
+- 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.
+- 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.
+```
+
+**Constraints:**
+
+* `1 <= nums1.length <= nums2.length <= 1000`
+* `0 <= nums1[i], nums2[i] <= 104`
+* All integers in `nums1` and `nums2` are **unique**.
+* All the integers of `nums1` also appear in `nums2`.
+
+&#x20;**Follow up:** Could you find an `O(nums1.length + nums2.length)` solution?
+
+```
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        // 单调递减栈 - 栈顶小，就是单调递减栈
+        Deque<Integer> stack = new ArrayDeque();
+        // store its next greater element
+        Map<Integer, Integer> map = new HashMap<>(); 
+        
+        for (int i = 0; i < nums2.length; i++) {
+            while (!stack.isEmpty() && nums2[i] > stack.peekLast()){
+                // curr number is next greater element of stack.peek()
+                map.put(stack.pollLast(), nums2[i]);
+            } 
+            stack.offer(nums2[i]);
+        }
+        
+        while (!stack.isEmpty()) {
+            map.put(stack.pollLast(), -1);
+        }
+        
+        int[] res = new int[nums1.length];
+        for (int i = 0; i < nums1.length; i++) {
+            res[i] = map.get(nums1[i]);
+            
+        }
+        return res;
+    }
+    
+    // 单调递减栈, 然后此时我们碰到了大于栈顶元素的值，那么这个值一定是栈顶元素的下一个更大的元素
+    // 此时我们碰到了小于栈顶元素的值， 入栈
+}
+```
+
+## 503. Next Greater Element II
+
+Given a circular integer array `nums` (i.e., the next element of `nums[nums.length - 1]` is `nums[0]`), return _the **next greater number** for every element in_ `nums`.
+
+The **next greater number** of a number `x` is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, return `-1` for this number.
+
+**Example 1:**
+
+```
+Input: nums = [1,2,1]
+Output: [2,-1,2]
+Explanation: The first 1's next greater number is 2; 
+The number 2 can't find next greater number. 
+The second 1's next greater number needs to search circularly, which is also 2.
+```
+
+**Example 2:**
+
+```
+Input: nums = [1,2,3,4,3]
+Output: [2,3,4,-1,4]
+```
+
+**Constraints:**
+
+* `1 <= nums.length <= 104`
+* `-109 <= nums[i] <= 109`
+
+```
+class Solution {
+    public int[] nextGreaterElements(int[] nums) {
+        int[] res = new int[nums.length];
+        Arrays.fill(res, -1);
+        Deque<Integer> deque = new ArrayDeque<>(); // index
+        
+        for (int i = 0; i < 2 * nums.length; i++) {
+            while (!deque.isEmpty() && nums[i % nums.length] > nums[deque.peekLast()]) {
+                int idx = deque.pollLast();
+                res[idx] = nums[i % nums.length];
+            }
+            deque.offer(i % nums.length);
+        }
+        
+        return res;
+    }
+}
+```
+
+## 739. Daily Temperatures&#x20;
