@@ -44,6 +44,7 @@
   * [Recursion](leetcode/algorithms/recursion/README.md)
     * [341 Flatten Nested List Iterator](leetcode/algorithms/recursion/341-flatten-nested-list-iterator.md)
   * [Tree Problem](leetcode/algorithms/untitled/README.md)
+    * [Tree Traversal](leetcode/algorithms/untitled/tree-traversal.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/algorithms/untitled/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/algorithms/untitled/236.-lowest-common-ancestor-of-a-binary-tree.md)
     * [98. Validate Binary Search Tree](leetcode/algorithms/untitled/98.-validate-binary-search-tree.md)
