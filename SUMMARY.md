@@ -4,6 +4,16 @@
 
 ## leetcode
 
+* [A - 80\_Must\_Have](leetcode/a-80\_must\_have/README.md)
+  * [LinkedList](leetcode/a-80\_must\_have/linkedlist.md)
+  * [BinarySearch](leetcode/a-80\_must\_have/binarysearch.md)
+  * [BinarySearchAnswer](leetcode/a-80\_must\_have/binarysearchanswer.md)
+  * [Two Pointers](leetcode/a-80\_must\_have/two-pointers.md)
+  * [BFS](leetcode/a-80\_must\_have/bfs.md)
+  * [TreeTraverse](leetcode/a-80\_must\_have/treetraverse.md)
+  * [Tree & Recursion](leetcode/a-80\_must\_have/tree-and-recursion.md)
+  * [BalancedBST](leetcode/a-80\_must\_have/balancedbst.md)
+  * [DFS](leetcode/a-80\_must\_have/dfs.md)
 * [Algorithms](leetcode/algorithms/README.md)
   * [Problems](leetcode/algorithms/problems.md)
   * [Graph](leetcode/algorithms/graph/README.md)
