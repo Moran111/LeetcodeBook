@@ -4,6 +4,15 @@ description: Time complexity NLogN
 
 # MergeSort
 
+Merge Sort
+
+1. Base case: when start >= end (only one element in the list)
+2. find the middle&#x20;
+3. sort 0 - middle and middle + 1 - end
+4. merge two sorted list
+
+Time Complexity: NLogN
+
 ## 148. Sort List
 
 Given the `head` of a linked list, return _the list after sorting it in **ascending order**_.
