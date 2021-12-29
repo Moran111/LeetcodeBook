@@ -6,6 +6,7 @@
 
 * [A - 80\_Must\_Have](leetcode/a-80\_must\_have/README.md)
   * [LinkedList](leetcode/a-80\_must\_have/linkedlist/README.md)
+    * [ReverseLinkedList](leetcode/a-80\_must\_have/linkedlist/reverselinkedlist.md)
     * [MergeSort](leetcode/a-80\_must\_have/linkedlist/mergesort.md)
     * [Fast & Slow Pointer](leetcode/a-80\_must\_have/linkedlist/fast-and-slow-pointer.md)
   * [BinarySearch](leetcode/a-80\_must\_have/binarysearch.md)
