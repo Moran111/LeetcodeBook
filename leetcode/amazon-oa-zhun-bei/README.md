@@ -1,8 +1,8 @@
-# Amazon OA 准备
+# Amazon准备
 
 ## F**etch Items To Display**
 
-Given a list of items, the item includes (name, relevance, price). They want to ask how many item will be displayed in given page. Given one page can display n items and they want to sort the item by **(0: ascending, 1:descending). **SortParameter means the item should be sorted by which attribute. SortParamerter = 1 means sorted by relevance.&#x20;
+Given a list of items, the item includes (name, relevance, price). They want to ask how many item will be displayed in given page. Given one page can display n items and they want to sort the item by **(0: ascending, 1:descending).** SortParameter means the item should be sorted by which attribute. SortParamerter = 1 means sorted by relevance.&#x20;
 
 ```
 Sample Input:

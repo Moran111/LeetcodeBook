@@ -5,7 +5,8 @@
 ## leetcode
 
 * [A - 80\_Must\_Have](leetcode/a-80\_must\_have/README.md)
-  * [LinkedList](leetcode/a-80\_must\_have/linkedlist.md)
+  * [LinkedList](leetcode/a-80\_must\_have/linkedlist/README.md)
+    * [Fast & Slow Pointer](leetcode/a-80\_must\_have/linkedlist/fast-and-slow-pointer.md)
   * [BinarySearch](leetcode/a-80\_must\_have/binarysearch.md)
   * [BinarySearchAnswer](leetcode/a-80\_must\_have/binarysearchanswer.md)
   * [Two Pointers](leetcode/a-80\_must\_have/two-pointers.md)

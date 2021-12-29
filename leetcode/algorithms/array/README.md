@@ -24,7 +24,7 @@ Heap sort (NLogN, O(1))
 
 
 
-Given a string `s`, return `true` _if the _`s`_ can be palindrome after deleting **at most one** character from it_.
+Given a string `s`, return `true` _if the_ `s` _can be palindrome after deleting **at most one** character from it_.
 
 &#x20;
 

@@ -6,7 +6,7 @@
 
 There are `n` cities labeled from `1` to `n`. You are given the integer `n` and an array `connections` where `connections[i] = [xi, yi, costi]` indicates that the cost of connecting city `xi` and city `yi` (bidirectional connection) is `costi`.
 
-Return _the minimum **cost** to connect all the _`n`_ cities such that there is at least one path between each pair of cities_. If it is impossible to connect all the `n` cities, return `-1`,
+Return _the minimum **cost** to connect all the_ `n` _cities such that there is at least one path between each pair of cities_. If it is impossible to connect all the `n` cities, return `-1`,
 
 The **cost** is the sum of the connections' costs used.
 
