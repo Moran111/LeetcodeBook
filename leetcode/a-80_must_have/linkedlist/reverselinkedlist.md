@@ -221,7 +221,125 @@ public class Solution {
 
 ## Reverse Nodes in K-Group
 
+Description
+
+Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.\
+If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.\
+You may not alter the values in the nodes, only nodes itself may be changed.\
+Only constant memory is allowed.
+
+Example
+
+**Example 1**
+
+```
+Input:
+list = 1->2->3->4->5->null
+k = 2
+Output:
+2->1->4->3->5
+```
+
+**Example 2**
+
+```
+Input:
+list = 1->2->3->4->5->null
+k = 3
+Output:
+3->2->1->4->5
+
+```
+
+1. in while loop
+2. find the start - end, which includes k nodes that need to be reversed (while count <= k)&#x20;
+3.  reverse(prev, start, end) -> return the start, which is the tail of reversed linked list&#x20;
+
+    ```
+         // prev -> start -> xxx -> tail
+         // prev <- start <- xxx <- tail
+         // prev <- tail  <- xxx <- start
+         //                         prev start  tail 
+    ```
 
 
+4. in order to avoid cycle, need to resert start -> nextNode first and prev->tail
+5. resert count, prev = start, start = nextNode, and find the new end for the next loop&#x20;
 
+```
+/**
+ * Definition for ListNode
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param head: a ListNode
+     * @param k: An integer
+     * @return: a ListNode
+     */
+    public ListNode reverseKGroup(ListNode head, int k) {
+        // write your code here
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+
+        ListNode prev = dummy;
+        ListNode curr = head;
+        int count = 1;
+
+        while(curr != null) {
+            while (count < k && curr != null) {
+                curr = curr.next;
+                count++;
+            } 
+            if (curr != null) {
+                ListNode nextStart = curr.next;
+                //         start
+                // prev <- head <- xxx <- curr nextStart
+                ListNode start = reverse(prev, head, curr);
+
+                start.next = nextStart;
+                prev.next = curr;
+
+                prev = start; 
+                head = nextStart;
+                curr = nextStart;
+                count = 1;
+            }
+            // prev -> start -> xxx -> tail
+            // prev <- start <- xxx <- tail
+            // prev <- tail  <- xxx <- start
+            //                         prev start  tail 
+        }
+        return dummy.next;
+    }
+
+    //                  prev
+    // prev <- start <- xxx <- tail
+    private ListNode reverse(ListNode prev, ListNode start, ListNode tail) {
+        ListNode res = start;
+        ListNode d = prev;
+        while(start != tail) {
+            ListNode temp = start.next;
+            start.next = d;
+            d = start;
+            start = temp;
+        }
+        // start == tail
+        tail.next = d;
+        return res;
+    }
+}
+
+//      1->2->3->4->5->null
+// p <- 1<-2  3<-4
+//      T  k  k+1
+```
 
