@@ -1,2 +1,0 @@
-# Closest Binary Search Tree
-
