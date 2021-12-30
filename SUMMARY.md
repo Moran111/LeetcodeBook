@@ -24,6 +24,7 @@
     * [SearchAnswer](leetcode/a-80\_must\_have/binarysearch/searchanswer.md)
   * [Two Pointers](leetcode/a-80\_must\_have/two-pointers.md)
   * [BFS](leetcode/a-80\_must\_have/bfs.md)
+  * [Page 1](leetcode/a-80\_must\_have/page-1.md)
   * [TreeTraverse](leetcode/a-80\_must\_have/treetraverse.md)
   * [Tree & Recursion](leetcode/a-80\_must\_have/tree-and-recursion.md)
   * [BalancedBST](leetcode/a-80\_must\_have/balancedbst.md)
