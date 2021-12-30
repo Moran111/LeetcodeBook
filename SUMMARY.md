@@ -13,7 +13,7 @@
     * [Fast & Slow Pointer](leetcode/a-80\_must\_have/linkedlist/fast-and-slow-pointer.md)
     * [160. Intersection of Two Linked Lists](leetcode/a-80\_must\_have/linkedlist/160.-intersection-of-two-linked-lists.md)
     * [138. Copy List with Random Pointer](leetcode/a-80\_must\_have/linkedlist/138.-copy-list-with-random-pointer.md)
-    * [Page 1](leetcode/a-80\_must\_have/linkedlist/page-1.md)
+    * [725. Split Linked List in Parts](leetcode/a-80\_must\_have/linkedlist/725.-split-linked-list-in-parts.md)
     * [146 LRU Cache](leetcode/linkedlist/lru-cache.md)
     * [707. Design Linked List](leetcode/linkedlist/707.-design-linked-list.md)
   * [BinarySearch](leetcode/a-80\_must\_have/binarysearch.md)
