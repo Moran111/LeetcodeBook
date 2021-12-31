@@ -1,6 +1,6 @@
-# Two Pointers
+# Two Pointers & Array
 
-![](<../../.gitbook/assets/Screen Shot 2021-12-31 at 2.03.19 PM.png>)
+![](<../../../.gitbook/assets/Screen Shot 2021-12-31 at 2.03.19 PM.png>)
 
 同向：
 
