@@ -40,7 +40,7 @@
     * [Graph & Tree BFS](leetcode/a-80\_must\_have/bfs/graph-and-tree-bfs/README.md)
       * [261. Graph Valid Tree](leetcode/a-80\_must\_have/bfs/graph-and-tree-bfs/261.-graph-valid-tree.md)
     * [Topological Sort](leetcode/a-80\_must\_have/bfs/topological-sort/README.md)
-      * [207. Course Schedule](leetcode/a-80\_must\_have/bfs/topological-sort/207.-course-schedule.md)
+      * [207. Course Schedule](leetcode/algorithms/graph/topological-sorting/207.-course-schedule.md)
   * [Tree](leetcode/a-80\_must\_have/tree/README.md)
     * [TreeTraverse](leetcode/a-80\_must\_have/tree/treetraverse/README.md)
       * [Tree Traversal](leetcode/a-80\_must\_have/tree/treetraverse/tree-traversal.md)
