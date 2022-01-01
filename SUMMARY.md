@@ -66,7 +66,6 @@
     * [785. Is Graph Bipartite?](leetcode/algorithms/graph/785.-is-graph-bipartite.md)
     * [Topological Sorting](leetcode/algorithms/graph/topological-sorting/README.md)
       * [269. Alien Dictionary](leetcode/algorithms/graph/topological-sorting/269.-alien-dictionary.md)
-      * [207. Course Schedule](leetcode/algorithms/graph/topological-sorting/207.-course-schedule.md)
     * [MST](leetcode/algorithms/graph/mst/README.md)
       * [1135. Connecting Cities With Minimum Cost](leetcode/algorithms/graph/mst/1135.-connecting-cities-with-minimum-cost.md)
     * [BFS Shortest Path](leetcode/algorithms/graph/bfs-shortest-path/README.md)
