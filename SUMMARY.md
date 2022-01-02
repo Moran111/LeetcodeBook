@@ -37,6 +37,7 @@
       * [490. The Maze](leetcode/a-80\_must\_have/bfs/2d-array-bfs/490.-the-maze.md)
       * [200. Number of Islands](leetcode/a-80\_must\_have/bfs/2d-array-bfs/200.-number-of-islands.md)
       * [Knight Shortest Path II (2 Way BFS)](leetcode/a-80\_must\_have/bfs/2d-array-bfs/knight-shortest-path-ii-2-way-bfs.md)
+      * [Word Ladder](leetcode/a-80\_must\_have/bfs/2d-array-bfs/word-ladder.md)
     * [Graph & Tree BFS](leetcode/a-80\_must\_have/bfs/graph-and-tree-bfs/README.md)
       * [261. Graph Valid Tree](leetcode/a-80\_must\_have/bfs/graph-and-tree-bfs/261.-graph-valid-tree.md)
     * [Topological Sort](leetcode/a-80\_must\_have/bfs/topological-sort/README.md)
