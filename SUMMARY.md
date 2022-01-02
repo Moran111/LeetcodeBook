@@ -70,8 +70,6 @@
     * [MST](leetcode/algorithms/graph/mst/README.md)
       * [1135. Connecting Cities With Minimum Cost](leetcode/algorithms/graph/mst/1135.-connecting-cities-with-minimum-cost.md)
     * [BFS Shortest Path](leetcode/algorithms/graph/bfs-shortest-path/README.md)
-      * [BFS](leetcode/algorithms/graph/bfs-shortest-path/bfs/README.md)
-        * [127. Word Ladder](leetcode/algorithms/graph/bfs-shortest-path/bfs/127.-word-ladder.md)
       * [Dijkstra](leetcode/algorithms/graph/bfs-shortest-path/dijkstra/README.md)
         * [743. Network Delay Time](leetcode/algorithms/graph/bfs-shortest-path/dijkstra/743.-network-delay-time.md)
       * [787. Cheapest Flights Within K Stops](leetcode/algorithms/graph/bfs-shortest-path/787.-cheapest-flights-within-k-stops.md)
