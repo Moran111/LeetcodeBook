@@ -50,6 +50,7 @@
       * [437. Path Sum III](leetcode/a-80\_must\_have/tree/treetraverse/437.-path-sum-iii.md)
       * [297. Serialize and Deserialize Binary Tree](leetcode/a-80\_must\_have/tree/tree-and-recursion/297.-serialize-and-deserialize-binary-tree.md)
       * [105. Construct Binary Tree from Preorder and Inorder Traversal](leetcode/a-80\_must\_have/tree/treetraverse/105.-construct-binary-tree-from-preorder-and-inorder-traversal.md)
+      * [106. Construct Binary Tree from Inorder and Postorder Traversal](leetcode/a-80\_must\_have/tree/treetraverse/106.-construct-binary-tree-from-inorder-and-postorder-traversal.md)
     * [Tree & Recursion](leetcode/a-80\_must\_have/tree/tree-and-recursion/README.md)
       * [Get Result From Left And Right Result](leetcode/a-80\_must\_have/tree/tree-and-recursion/get-result-from-left-and-right-result/README.md)
         * [508. Most Frequent Subtree Sum](leetcode/a-80\_must\_have/tree/tree-and-recursion/get-result-from-left-and-right-result/508.-most-frequent-subtree-sum.md)
