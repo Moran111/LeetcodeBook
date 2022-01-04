@@ -61,6 +61,7 @@
       * [1628. Design an Expression Tree With Evaluate Function](leetcode/a-80\_must\_have/tree/tree-and-recursion/1628.-design-an-expression-tree-with-evaluate-function.md)
       * [814. Binary Tree Pruning](leetcode/a-80\_must\_have/tree/tree-and-recursion/814.-binary-tree-pruning.md)
       * [572. Subtree of Another Tree](leetcode/a-80\_must\_have/tree/tree-and-recursion/572.-subtree-of-another-tree.md)
+      * [236. Lowest Common Ancestor of a Binary Tree](<leetcode/a-80\_must\_have/tree/tree-and-recursion/236.-lowest-common-ancestor-of-a-binary-tree (1).md>)
     * [BalancedBST](leetcode/a-80\_must\_have/tree/balancedbst/README.md)
       * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/a-80\_must\_have/tree/balancedbst/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
       * [98. Validate Binary Search Tree](leetcode/a-80\_must\_have/tree/balancedbst/98.-validate-binary-search-tree.md)
