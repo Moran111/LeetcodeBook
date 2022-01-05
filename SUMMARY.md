@@ -58,6 +58,7 @@
         * [508. Most Frequent Subtree Sum](leetcode/a-80\_must\_have/tree/tree-and-recursion/get-result-from-left-and-right-result/508.-most-frequent-subtree-sum.md)
         * [426. Convert Binary Search Tree to Sorted Doubly Linked List](leetcode/a-80\_must\_have/tree/tree-and-recursion/426.-convert-binary-search-tree-to-sorted-doubly-linked-list.md)
         * [236. Lowest Common Ancestor of a Binary Tree](leetcode/a-80\_must\_have/tree/tree-and-recursion/236.-lowest-common-ancestor-of-a-binary-tree.md)
+      * [742. Closest Leaf in a Binary Tree](leetcode/a-80\_must\_have/tree/tree-and-recursion/742.-closest-leaf-in-a-binary-tree.md)
       * [1628. Design an Expression Tree With Evaluate Function](leetcode/a-80\_must\_have/tree/tree-and-recursion/1628.-design-an-expression-tree-with-evaluate-function.md)
       * [814. Binary Tree Pruning](leetcode/a-80\_must\_have/tree/tree-and-recursion/814.-binary-tree-pruning.md)
       * [572. Subtree of Another Tree](leetcode/a-80\_must\_have/tree/tree-and-recursion/572.-subtree-of-another-tree.md)
