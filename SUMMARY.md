@@ -88,6 +88,8 @@
       * [1466. Reorder Routes to Make All Paths Lead to the City Zero](leetcode/a-80\_must\_have/graph/path-related/1466.-reorder-routes-to-make-all-paths-lead-to-the-city-zero.md)
       * [399. Evaluate Division](leetcode/a-80\_must\_have/graph/path-related/399.-evaluate-division.md)
       * [1615. Maximal Network Rank](leetcode/a-80\_must\_have/graph/path-related/1615.-maximal-network-rank.md)
+    * [Others](leetcode/a-80\_must\_have/graph/others/README.md)
+      * [959. Regions Cut By Slashes](leetcode/a-80\_must\_have/graph/others/959.-regions-cut-by-slashes.md)
 * [Union Find](leetcode/union-find/README.md)
   * [1319. Number of Operations to Make Network Connected](leetcode/union-find/1319.-number-of-operations-to-make-network-connected.md)
 * [Algorithms](leetcode/algorithms/README.md)
