@@ -1,10 +1,8 @@
 # Table of contents
 
-* [DesignPatterns](README.md)
-
 ## leetcode
 
-* [A - 80\_Must\_Have](leetcode/a-80\_must\_have/README.md)
+* [A - 80\_Must\_Have](README.md)
   * [LinkedList](leetcode/a-80\_must\_have/linkedlist/README.md)
     * [ReverseLinkedList](leetcode/a-80\_must\_have/linkedlist/reverselinkedlist.md)
     * [MergeSort](leetcode/a-80\_must\_have/linkedlist/mergesort/README.md)
@@ -208,3 +206,8 @@
   * [1167. Minimum Cost to Connect Sticks](leetcode/greedy-and-others/1167.-minimum-cost-to-connect-sticks.md)
   * [1041. Robot Bounded In Circle](leetcode/greedy-and-others/1041.-robot-bounded-in-circle.md)
   * [1647. Minimum Deletions to Make Character Frequencies Unique](leetcode/greedy-and-others/1647.-minimum-deletions-to-make-character-frequencies-unique.md)
+
+## DesignPatterns
+
+* [Creational Patterns](designpatterns/master/README.md)
+  * [Singleton](designpatterns/master/singleton.md)

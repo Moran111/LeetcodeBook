@@ -1,0 +1,6 @@
+---
+description: Leetcode notes :)
+---
+
+# Notes
+
