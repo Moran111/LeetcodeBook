@@ -2,7 +2,7 @@
 
 ways to create an Object, this class only have one instance
 
-## Method 1: Using Static Variable to Create a Singlton Class
+## Method 1: Using Static Variable to Create a Singlton Class (Eager Loading)
 
 ```
 class Singleton {
