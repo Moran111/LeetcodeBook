@@ -2,6 +2,8 @@
 
 ways to create an Object, this class only have one instance
 
+需要频繁的进行创建和销毁的对象，创建对象时耗时过多或者耗费过多资源，单用经常用到的对象，工具类对象，频繁访问数据库或者文件的对象
+
 ## Method 1: Using Static Variable to Create a Singlton Class (Eager Loading)
 
 ```
