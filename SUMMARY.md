@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Notes](README.md)
+* [DesignPatterns](README.md)
 
 ## leetcode
 
