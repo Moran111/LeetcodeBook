@@ -263,3 +263,207 @@ class Solution {
 
 
 ```
+
+## 203. Remove Linked List Elements
+
+
+
+Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return _the new head_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg)
+
+```
+Input: head = [1,2,6,3,4,5,6], val = 6
+Output: [1,2,3,4,5]
+```
+
+**Example 2:**
+
+```
+Input: head = [], val = 1
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: head = [7,7,7,7], val = 7
+Output: []
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 104]`.
+* `1 <= Node.val <= 50`
+* `0 <= val <= 50`
+
+`感觉remove的时候需要dummy variable`
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode curr = head;
+        
+        while(head != null) {
+            if (head.val == val) {
+                prev.next = head.next;
+                head = prev.next;
+            } else {
+                head = head.next;
+                prev = prev.next;
+            }
+        }
+        
+        return dummy.next;
+    }
+}
+```
+
+## 234. Palindrome Linked List
+
+Given the `head` of a singly linked list, return `true` if it is a palindrome.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/03/03/pal1linked-list.jpg)
+
+```
+Input: head = [1,2,2,1]
+Output: true
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/03/03/pal2linked-list.jpg)
+
+```
+Input: head = [1,2]
+Output: false
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[1, 105]`.
+* `0 <= Node.val <= 9`
+
+&#x20;
+
+**Follow up:** Could you do it in `O(n)` time and `O(1)` space?
+
+Solution: find the mid of the linked list and reverse second part of the linked list to check if the first part is same with second part
+
+1. find the mid node in the linked list  (slow and fast pointer). slow pointer move one step each time, and fast pointer move two step each time, different ways to write while condition will result to find different poisition of the mid point for even number of list. In this problem, we need to find the **end node of the first part of list. We want the loop stoped when f.next.next == null**
+
+ **为什么快慢指针可以找到中点？**同化成一个路程问题，同一段路程，A的速度是B的两倍，他们同时出发，当A走完全程时，B也就刚好走过一半
+
+```
+        // while fast.next != null && fast.next.next != null
+        //           f
+        // 1 -> 2 -> 3 -> 4   （指向两个元素中左边的那个）
+        //      s
+        // 1 -> 2 -> 3 -> 4 -> 5
+        //           s
+        //                       f
+        // while fast != null && fast.next != null
+        //                     f
+        // 1 -> 2 -> 3 -> 4   （指向两个元素中右边的那个）
+        //           s
+        // 1 -> 2 -> 3 -> 4 -> 5
+        //           s
+        //                       f
+```
+
+2\. Before we reverse the second part of the list, we need to make sure to set the firstHalf.next = null
+
+```
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        // solution 1
+        // palindrome -> vals from start and from end are same
+        // find the mid point of list, reverse one of the list and check
+        
+        ListNode endOfFirstHalf = null;
+        // while fast.next != null && fast.next.next != null
+        //           f
+        // 1 -> 2 -> 3 -> 4
+        //      s
+        // 1 -> 2 -> 3 -> 4 -> 5
+        //           s
+        //                       f
+        // while fast != null && fast.next != null
+        //                     f
+        // 1 -> 2 -> 3 -> 4
+        //           s
+        // 1 -> 2 -> 3 -> 4 -> 5
+        //           s
+        //                       f
+        // find mid (two pointer) if even, left mid, right mid 
+        // find the end of the first half
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        endOfFirstHalf = slow;
+        
+        // reverse linked list (if we want to reverse list, using dummy variable)
+        // reverse head , endOfFirstHalf
+        ListNode start = endOfFirstHalf.next;
+        endOfFirstHalf.next = null; // 反转后半段，前半段不要忘记最后一个连着null
+        ListNode nodeAfterReverse = reverse(start);
+        // System.out.println(curr.val);
+        // if it is even number 
+        // first half of list should same with second half of it
+        while(nodeAfterReverse != null) {
+            if (head.val != nodeAfterReverse.val) {
+                return false;
+            }
+            nodeAfterReverse = nodeAfterReverse.next;
+            head = head.next;
+        }
+        // if odd number of list, then there is one more head left, 
+        // it is ok
+        return true;
+    }
+    
+    private ListNode reverse(ListNode start) {
+        ListNode prev = null;
+        ListNode curr = start;
+        while(curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+}
+```
+
