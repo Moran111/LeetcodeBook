@@ -528,3 +528,133 @@ class Solution {
 }
 ```
 
+## 160. Intersection of Two Linked Lists
+
+Given the heads of two singly linked-lists `headA` and `headB`, return _the node at which the two lists intersect_. If the two linked lists have no intersection at all, return `null`.
+
+For example, the following two linked lists begin to intersect at node `c1`:
+
+![](https://assets.leetcode.com/uploads/2021/03/05/160\_statement.png)
+
+The test cases are generated such that there are no cycles anywhere in the entire linked structure.
+
+**Note** that the linked lists must **retain their original structure** after the function returns.
+
+**Custom Judge:**
+
+The inputs to the **judge** are given as follows (your program is **not** given these inputs):
+
+* `intersectVal` - The value of the node where the intersection occurs. This is `0` if there is no intersected node.
+* `listA` - The first linked list.
+* `listB` - The second linked list.
+* `skipA` - The number of nodes to skip ahead in `listA` (starting from the head) to get to the intersected node.
+* `skipB` - The number of nodes to skip ahead in `listB` (starting from the head) to get to the intersected node.
+
+The judge will then create the linked structure based on these inputs and pass the two heads, `headA` and `headB` to your program. If you correctly return the intersected node, then your solution will be **accepted**.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_1\_1.png)
+
+```
+Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
+Output: Intersected at '8'
+Explanation: The intersected node's value is 8 (note that this must not be 0 if the two lists intersect).
+From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_2.png)
+
+```
+Input: intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+Output: Intersected at '2'
+Explanation: The intersected node's value is 2 (note that this must not be 0 if the two lists intersect).
+From the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.
+```
+
+**Example 3:**
+
+![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_3.png)
+
+```
+Input: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+Output: No intersection
+Explanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.
+Explanation: The two lists do not intersect, so return null.
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes of `listA` is in the `m`.
+* The number of nodes of `listB` is in the `n`.
+* `1 <= m, n <= 3 * 104`
+* `1 <= Node.val <= 105`
+* `0 <= skipA < m`
+* `0 <= skipB < n`
+* `intersectVal` is `0` if `listA` and `listB` do not intersect.
+* `intersectVal == listA[skipA] == listB[skipB]` if `listA` and `listB`intersect.
+
+&#x20;
+
+**Follow up:** Could you write a solution that runs in `O(m + n)` time and use only `O(1)`memory?
+
+Imagine that we have two linked lists, A and B, and we know that their lengths are NN and MMrespectively (these can be calculated with O(1)O(1) space and in time proportional to the length of the list). We'll imagine that N=5N=5 and M=8M=8.
+
+![Two linked lists with question marks on their nodes. The first is 5 nodes long, and the second is 8 nodes long.](https://leetcode.com/problems/Figures/160/image1.png)
+
+Because the "tails" must be the same length, we can conclude that _if_ there is an intersection, then the intersection node will be one of these 5 possibilities.
+
+![The two linked lists from above with arrows showing how the last 5 nodes of each list could be a match.](https://leetcode.com/problems/Figures/160/image2.png)
+
+So, to check for each of these pairs, we would start by setting a pointer at the start of the shorter list, and a pointer at the first possible matching node of the longer list. The position of this node is simply the difference between the two lengths, that is, ∣M−N∣∣M−N∣.
+
+![The two linked lists from above with a p1 pointer at the head of the first, and a p2 pointer at the 4th node of the second.](https://leetcode.com/problems/Figures/160/image3.png)
+
+Then, we just need to step the two pointers through the list, each time checking whether or not the nodes are the same.
+
+In code, we could write this algorithm with 4 loops, one after the other, each doing the following:
+
+1. Calculate NN; the length of list A.
+2. Calculate MM; the length of list B.
+3. Set the start pointer for the _longer_ list.
+4. Step the pointers through the list together.
+
+While this would have a time complexity of O(N+M)O(N+M) and a space complexity of O(1)O(1)and would be fine for an interview, we can still simplify the code a bit! As some quick reassurance, most people will struggle to come up with this next part by themselves. It takes practice and seeing lots of linked list and other math problems.
+
+**If we say that cc is the **_**shared**_** part, aa is **_**exclusive part of list A**_** and bb is **_**exclusive part of list B**_**, then we can have one pointer that goes over `a + c + b` and the other that goes over `b + c + a`. Have a look at the diagram below, and this should be fairly intuitive.**
+
+![Diagram showing that one pointer could go over a + c + b while the other goes over b + c + a, and then both will end up on the intersection node.](https://leetcode.com/problems/Figures/160/image4.png)
+
+This is the above algorithm in disguise - one pointer is essentially measuring the length of the longer list, and the other is measuring the length of the shorter list, and then placing the start pointer for the longer list. Then both are stepping through the list together. By seeing the solution in this way though, we can now implement it as a single loop.
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        // two pointer, 人为的让指针循环起来
+        ListNode p1 = headA;
+        ListNode p2 = headB;
+        while(p1 != p2) {
+            p1 = p1 == null ? headB : p1.next;
+            p2 = p2 == null ? headA : p2.next;
+        }
+        return p1;
+    }
+}
+```
