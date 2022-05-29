@@ -182,9 +182,70 @@ public class Solution {
 }
 ```
 
+## 876. Middle of the Linked List
+
+
+
+Given the `head` of a singly linked list, return _the middle node of the linked list_.
+
+If there are two middle nodes, return **the second middle** node.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/07/23/lc-midlist1.jpg)
+
+```
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/07/23/lc-midlist2.jpg)
+
+```
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[1, 100]`.
+* `1 <= Node.val <= 100`
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        //  找比较右边的中点
+        ListNode slow = head;
+        ListNode fast = head;
+        // 会多走一步, 因为只check下一个是不是空
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
+
 ## 83. Remove Duplicates from Sorted List
-
-
 
 Given the `head` of a sorted linked list, _delete all duplicates such that each element appears only once_. Return _the linked list **sorted** as well_.
 
@@ -335,7 +396,7 @@ class Solution {
         
         return dummy.next;
     }
-}
+
 ```
 
 ## 234. Palindrome Linked List
