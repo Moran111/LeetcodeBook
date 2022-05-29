@@ -92,6 +92,8 @@
   * [1319. Number of Operations to Make Network Connected](leetcode/union-find/1319.-number-of-operations-to-make-network-connected.md)
 * [Algorithms](leetcode/algorithms/README.md)
   * [Problems](leetcode/algorithms/problems.md)
+  * [Linked List](leetcode/algorithms/linked-list/README.md)
+    * [Easy Linked List Questions](leetcode/algorithms/linked-list/easy-linked-list-questions.md)
   * [Map & Set](leetcode/algorithms/map-and-set/README.md)
     * [1570. Dot Product of Two Sparse Vectors](leetcode/algorithms/map-and-set/1570.-dot-product-of-two-sparse-vectors.md)
   * [Hash & Heap & Stack](leetcode/algorithms/hash-and-heap-and-stack/README.md)
@@ -211,3 +213,4 @@
 
 * [Creational Patterns](designpatterns/master/README.md)
   * [Singleton](designpatterns/master/singleton.md)
+  * [Factory](designpatterns/master/factory.md)
