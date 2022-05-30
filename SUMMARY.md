@@ -94,6 +94,7 @@
   * [Problems](leetcode/algorithms/problems.md)
   * [Linked List](leetcode/algorithms/linked-list/README.md)
     * [Easy Linked List Questions](leetcode/algorithms/linked-list/easy-linked-list-questions.md)
+    * [Medium Linked List Question](leetcode/algorithms/linked-list/medium-linked-list-question.md)
   * [Map & Set](leetcode/algorithms/map-and-set/README.md)
     * [1570. Dot Product of Two Sparse Vectors](leetcode/algorithms/map-and-set/1570.-dot-product-of-two-sparse-vectors.md)
   * [Hash & Heap & Stack](leetcode/algorithms/hash-and-heap-and-stack/README.md)

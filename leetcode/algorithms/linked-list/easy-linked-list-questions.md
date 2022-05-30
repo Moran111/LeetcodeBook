@@ -1,5 +1,13 @@
 # Easy Linked List Questions
 
+#### Reverse Linked List
+
+#### Slow/Fast Pointer - find cycle and mid of the linked list
+
+#### Find intersection&#x20;
+
+
+
 ## 206. Reverse Linked List
 
 Given the `head` of a singly linked list, reverse the list, and return _the reversed list_.
@@ -655,6 +663,91 @@ public class Solution {
             p2 = p2 == null ? headA : p2.next;
         }
         return p1;
+    }
+}
+```
+
+## 21. Merge Two Sorted Lists
+
+
+
+You are given the heads of two sorted linked lists `list1` and `list2`.
+
+Merge the two lists in a one **sorted** list. The list should be made by splicing together the nodes of the first two lists.
+
+Return _the head of the merged linked list_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/10/03/merge\_ex1.jpg)
+
+```
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+```
+
+**Example 2:**
+
+```
+Input: list1 = [], list2 = []
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: list1 = [], list2 = [0]
+Output: [0]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in both lists is in the range `[0, 50]`.
+* `-100 <= Node.val <= 100`
+* Both `list1` and `list2` are sorted in **non-decreasing** order.
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode head = dummy;
+        ListNode h1 = list1;
+        ListNode h2 = list2;
+        while(h1 != null && h2 != null) {
+            if (h1.val <= h2.val) {
+                head.next = h1;
+                h1 = h1.next;
+            } else {
+                head.next = h2;
+                h2 = h2.next;
+            }
+            head = head.next;
+        }
+        while (h1 != null) {
+            head.next = h1;
+            h1 = h1.next;
+            head = head.next;
+        }
+        while (h2 != null) {
+            head.next = h2;
+            h2 = h2.next;
+            head = head.next;
+        }
+        return dummy.next;
     }
 }
 ```
