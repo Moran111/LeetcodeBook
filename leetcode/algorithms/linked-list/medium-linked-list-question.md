@@ -130,3 +130,141 @@ class Solution {
 }
 ```
 
+## 143. Reorder List
+
+reverse second half of linked list and merge two list in place
+
+
+
+You are given the head of a singly linked-list. The list can be represented as:
+
+```
+L0 → L1 → … → Ln - 1 → Ln
+```
+
+_Reorder the list to be on the following form:_
+
+```
+L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+```
+
+You may not modify the values in the list's nodes. Only nodes themselves may be changed.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/03/04/reorder1linked-list.jpg)
+
+```
+Input: head = [1,2,3,4]
+Output: [1,4,2,3]
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/03/09/reorder2-linked-list.jpg)
+
+```
+Input: head = [1,2,3,4,5]
+Output: [1,5,2,4,3]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[1, 5 * 104]`.
+* `1 <= Node.val <= 1000`
+
+```
+class Solution {
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        // reverse second half of linked list and merge two list
+        // find second half of the linked list - slow and fast, 找比较偏左的那个比较好
+        // 奇数的时候会找中间
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        // reverse slow - end of list, prev is the new head
+        ListNode prev = null;
+        ListNode curr = slow.next;
+        slow.next = null; // the last node in the first half of list
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        
+        // h
+        // 1 3 
+        // 2 4
+        ListNode start = head;
+        ListNode p1 = head; // point to the node which needs to merge in next step in list1 
+        ListNode p2 = prev; // point to the node which needs to merge in next step in list2
+        while (p1 != null && p2 != null) {
+            ListNode nextInFirstList = p1.next;
+            if (p1 != start) {
+                head.next = p1;
+                head = head.next;
+            }
+            head.next = p2;
+            p1 = nextInFirstList;
+            p2 = p2.next;  
+            head = head.next;
+        }
+        if (p1 != null) {
+            head.next = p1;
+        }
+        
+        /*
+        // merge 1->2->3 and 6->5->4 into 1->6->2->5->3->4
+        ListNode first = head; ListNode second = prev;
+        while (second.next != null) {
+        完成 1->6->2的这一步在一个loop里
+            2->5->3
+            3->4-> null => 4.next = null, exit the loop
+            temp = first.next;
+            first.next = second;
+            first = temp;
+            
+            temp = second.next;
+            second.next = first;
+            second = temp;
+        }
+        */
+    }
+}
+```
+
+* 注意快慢指针的slow，point to the end of the first half of list. so the start of the next half is the slow.next
+* when merge two list in place, inside the loop, I did: l1: 1 -> 3 -> 5 . l2: 2 ->.4.I did 1->2
+* But What else I can did is 1->2->3, 3->4->5,4.next = null, loop stop here
+
+```
+        /*
+        // merge 1->2->3 and 6->5->4 into 1->6->2->5->3->4
+        ListNode first = head; ListNode second = prev;
+        while (second.next != null) {
+        完成 1->6->2的这一步在一个loop里
+            2->5->3
+            3->4-> null => 4.next = null, exit the loop
+            temp = first.next;
+            first.next = second;
+            first = temp;
+            
+            temp = second.next;
+            second.next = first;
+            second = temp;
+        }
+        */
+```
+
