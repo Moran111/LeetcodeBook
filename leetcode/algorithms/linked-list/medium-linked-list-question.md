@@ -268,3 +268,71 @@ class Solution {
         */
 ```
 
+## 82. Remove Duplicates from Sorted List II
+
+
+
+Given the `head` of a sorted linked list, _delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list_. Return _the linked list **sorted** as well_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/01/04/linkedlist1.jpg)
+
+```
+Input: head = [1,2,3,3,4,4,5]
+Output: [1,2,5]
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/01/04/linkedlist2.jpg)
+
+```
+Input: head = [1,1,1,2,3]
+Output: [2,3]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 300]`.
+* `-100 <= Node.val <= 100`
+* The list is guaranteed to be **sorted** in ascending order.
+
+只要有duplicate就不要， 这种情况下可以找到最后一个是duplicate的node 然后直接prev.next = lastDuplicateNode.next. 需要检查current node and curr.next, 如果他们想等那么就得一直检查下去，直到找到最后一个duplicated node
+
+```
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        // check if current node is same with the next one, if same, find all duplicate and 
+        // skip them
+        
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode prev = dummy;
+        ListNode curr = head;
+        
+        while (curr != null) {
+            // 如果当前的和他后面的想等的话
+            if (curr.next != null && curr.val == curr.next.val) {
+                // find the last duplicated node
+                while (curr.next != null && curr.val == curr.next.val) {
+                    curr = curr.next;
+                }
+                // 1 - 5 - 5 - null
+                // p   c.  c 
+                // 1 - null
+                // skip these duplicated node
+                prev.next = curr.next;
+            } else {
+                prev = prev.next;
+            }
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+}
+```
