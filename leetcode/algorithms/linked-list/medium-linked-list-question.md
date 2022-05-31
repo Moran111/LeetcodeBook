@@ -336,3 +336,294 @@ class Solution {
     }
 }
 ```
+
+## 19. Remove Nth Node From End of List
+
+Given the `head` of a linked list, remove the `nth` node from the end of the list and return its head.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/10/03/remove\_ex1.jpg)
+
+```
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+```
+
+**Example 2:**
+
+```
+Input: head = [1], n = 1
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: head = [1,2], n = 1
+Output: [1]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is `sz`.
+* `1 <= sz <= 30`
+* `0 <= Node.val <= 100`
+* `1 <= n <= sz`
+
+**Follow up:** Could you do this in one pass?
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        int count = 1;
+        ListNode curr = head;
+        while(curr.next != null) {
+            curr = curr.next;
+            count++;
+        }
+        
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        
+        int lastIndexBeforeRemove = count - n;
+        ListNode prev = dummy;
+        for (int i = 0; i < lastIndexBeforeRemove; i++) {
+            prev = prev.next;
+        }
+        
+        if (prev.next != null) {
+            ListNode next = prev.next.next;
+            prev.next = next;
+        } else {
+            prev.next = null;
+        }
+           
+        return dummy.next;
+    }
+}
+```
+
+如果one pass的话，就让slow和fast之间差n个，这样 fast到最后一个node的时候，slow就会在n的倒数的n的前一个
+
+d - 1 - 2 -3 - 4- 5 - null (n = 2)
+
+s
+
+&#x20;                f&#x20;
+
+&#x20;                s                f
+
+```
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        
+        // move n + 1 times, so there are n gaps between slow and fast
+        for (int i = 1; i <= n + 1; i++) {   
+            fast = fast.next;
+        }
+        
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        
+        ListNode next = slow.next.next;
+        slow.next = next;
+        return dummy.next;
+    }
+}
+```
+
+
+
+## 148. Sort Linked List
+
+Given the `head` of a linked list, return _the list after sorting it in **ascending order**_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/09/14/sort\_list\_1.jpg)
+
+```
+Input: head = [4,2,1,3]
+Output: [1,2,3,4]
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2020/09/14/sort\_list\_2.jpg)
+
+```
+Input: head = [-1,5,3,4,0]
+Output: [-1,0,3,4,5]
+```
+
+**Example 3:**
+
+```
+Input: head = []
+Output: []
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 5 * 104]`.
+* `-105 <= Node.val <= 105`
+
+&#x20;
+
+**Follow up:** Can you sort the linked list in `O(n logn)` time and `O(1)` memory (i.e. constant space)?
+
+### Merge Sort NlogN, O(1) space for linked list, but O(n) space for Array.&#x20;
+
+don't remeber write base case for recursion
+
+```
+class Solution {
+    public ListNode sortList(ListNode head) {
+       return mergeSort(head);        
+    }
+    
+    public ListNode mergeSort(ListNode head) {
+        // base case
+        if (head == null || head.next == null) {
+            return head;
+        }
+         // find mid 
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        ListNode secondPart = slow.next;
+        slow.next = null;
+          
+        ListNode l1 = mergeSort(head);
+        ListNode l2 = mergeSort(secondPart);
+        
+        /*
+        [4,2,1,3]
+        4 2 -> 2, 4
+        1 3 -> 1, 3
+        4 1 
+
+        */
+        // System.out.println(l1.val + " " + l2.val);
+        return merge(l1, l2);
+    }
+    
+    public ListNode merge(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode head = dummy;
+        ListNode h1 = l1;
+        ListNode h2 = l2;
+        while(h1 != null && h2 != null) {
+            if (h1.val <= h2.val) {
+                head.next = h1;
+                h1 = h1.next;
+            } else {
+                head.next = h2;
+                h2 = h2.next;
+            }
+            head = head.next;
+        }
+        while (h1 != null) {
+            head.next = h1;
+            h1 = h1.next;
+            head = head.next;
+        }
+        while (h2 != null) {
+            head.next = h2;
+            h2 = h2.next;
+            head = head.next;
+        }
+        return dummy.next;
+    }
+}
+```
+
+## 86. Partition List
+
+
+
+Given the `head` of a linked list and a value `x`, partition it such that all nodes **less than** `x`come before nodes **greater than or equal** to `x`.
+
+You should **preserve** the original relative order of the nodes in each of the two partitions.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/01/04/partition.jpg)
+
+```
+Input: head = [1,4,3,2,5,2], x = 3
+Output: [1,2,2,4,3,5]
+```
+
+**Example 2:**
+
+```
+Input: head = [2,1], x = 2
+Output: [1,2]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 200]`.
+* `-100 <= Node.val <= 100`
+* `-200 <= x <= 200`
+
+```
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        // partition 
+        ListNode beforeHead = new ListNode(-1);
+        ListNode before = beforeHead;
+        ListNode after = new ListNode(-1);
+        ListNode afterHead = after;
+        
+        while (head != null) {
+            if (head.val < x) {
+                before.next = head;
+                before = before.next;
+            } else {
+                after.next = head;
+                after = after.next;
+            }
+            head = head.next;
+        }
+        after.next = null;
+        
+        before.next = afterHead.next; 
+        return beforeHead.next;
+    }
+}
+```
