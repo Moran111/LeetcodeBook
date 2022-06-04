@@ -892,3 +892,445 @@ class Solution {
     // head.child == null && head.next == null, return head
 }
 ```
+
+## 25. Reverse Nodes in k-Group
+
+Given the `head` of a linked list, reverse the nodes of the list `k` at a time, and return _the modified list_.
+
+`k` is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of `k` then left-out nodes, in the end, should remain as it is.
+
+You may not alter the values in the list's nodes, only nodes themselves may be changed.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/10/03/reverse\_ex1.jpg)
+
+```
+Input: head = [1,2,3,4,5], k = 2
+Output: [2,1,4,3,5]
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2020/10/03/reverse\_ex2.jpg)
+
+```
+Input: head = [1,2,3,4,5], k = 3
+Output: [3,2,1,4,5]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is `n`.
+* `1 <= k <= n <= 5000`
+* `0 <= Node.val <= 1000`
+
+&#x20;
+
+**Follow-up:** Can you solve the problem in `O(1)` extra memory space?
+
+如果少于k个的话，就不要reverse了
+
+需要知道reverse开始前的最后一个node，reverse开始的node，和reverse完成后的tail
+
+```
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        int count = k;
+        
+        ListNode temp = dummy; 
+        // last node before start reversing point
+        ListNode curr = head;
+        while(curr != null) {
+            // check how many node left
+            ListNode p1 = curr;
+            int size = 0;
+            while (p1 != null) {
+                p1 = p1.next;
+                size++;
+            }
+            // if less than k nodes, don't rotate
+            if (size < k) {
+                return dummy.next;
+            }
+            
+            ListNode prev = null;
+            ListNode currStart = curr;   
+            while (curr != null && count > 0) {
+                count--;
+                ListNode next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+            
+            // after reverse: currStart(tail) <-   prev <- curr(nextStart)
+            
+            //System.out.println(currStart.val + " " + " " + prev.val);
+            
+            temp.next = prev;
+            currStart.next = curr; // curr is the next start point
+
+            temp = currStart; // the dummy of next rotation
+            count = k;
+        }
+        return dummy.next;
+    }
+}
+```
+
+## 1669. Merge in Between Linked Lists
+
+
+
+You are given two linked lists: `list1` and `list2` of sizes `n` and `m` respectively.
+
+Remove `list1`'s nodes from the `ath` node to the `bth` node, and put `list2` in their place.
+
+The blue edges and nodes in the following figure indicate the result:
+
+![](https://assets.leetcode.com/uploads/2020/11/05/fig1.png)
+
+_Build the result list and return its head._
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/11/05/merge\_linked\_list\_ex1.png)
+
+```
+Input: list1 = [0,1,2,3,4,5], a = 3, b = 4, list2 = [1000000,1000001,1000002]
+Output: [0,1,2,1000000,1000001,1000002,5]
+Explanation: We remove the nodes 3 and 4 and put the entire list2 in their place. The blue edges and nodes in the above figure indicate the result.
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2020/11/05/merge\_linked\_list\_ex2.png)
+
+```
+Input: list1 = [0,1,2,3,4,5,6], a = 2, b = 5, list2 = [1000000,1000001,1000002,1000003,1000004]
+Output: [0,1,1000000,1000001,1000002,1000003,1000004,6]
+Explanation: The blue edges and nodes in the above figure indicate the result.
+```
+
+&#x20;
+
+**Constraints:**
+
+* `3 <= list1.length <= 104`
+* `1 <= a <= b < list1.length - 1`
+* `1 <= list2.length <= 104`
+
+```
+class Solution {
+    public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = list1;
+        
+        ListNode head = list1;
+        int count = 0;
+        
+        ListNode start = null;
+        ListNode end = null;
+        
+        while (count < a) {
+            start = head;
+            head = head.next;
+            count++;
+        }
+        
+        while (count < b) {
+            end = head;
+            head = head.next;
+            count++;
+        }
+        
+        ListNode tail = list2;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        
+        start.next = list2;
+        tail.next = head.next;
+        
+        return dummy.next;
+    }
+}
+```
+
+## 725. Split Linked List in Parts
+
+
+
+Given the `head` of a singly linked list and an integer `k`, split the linked list into `k`consecutive linked list parts.
+
+The length of each part should be as equal as possible: no two parts should have a size differing by more than one. This may lead to some parts being null.
+
+The parts should be in the order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal to parts occurring later.
+
+Return _an array of the_ `k` _parts_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/06/13/split1-lc.jpg)
+
+```
+Input: head = [1,2,3], k = 5
+Output: [[1],[2],[3],[],[]]
+Explanation:
+The first element output[0] has output[0].val = 1, output[0].next = null.
+The last element output[4] is null, but its string representation as a ListNode is [].
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/06/13/split2-lc.jpg)
+
+```
+Input: head = [1,2,3,4,5,6,7,8,9,10], k = 3
+Output: [[1,2,3,4],[5,6,7],[8,9,10]]
+Explanation:
+The input has been split into consecutive parts with size difference at most 1, and earlier parts are a larger size than the later parts.
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 1000]`.
+* `0 <= Node.val <= 1000`
+* `1 <= k <= 50`
+
+怎么能得倒想要的node前的那一个，用一个prev指针
+
+```
+class Solution {
+    public ListNode[] splitListToParts(ListNode head, int k) {
+        ListNode[] lists = new ListNode[k];
+        
+        // if size < k, each bucket put one node and left others empty
+        // size of list, use k / size and put reminders back from the start bucket
+        
+        int size = 0;
+        ListNode temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            size++;
+        }
+        
+        // if (size <= k) {
+        //     ListNode temp = head;
+        //     for (int i = 0; i < k; i++) {
+        //         if (temp == null) {
+        //             continue;
+        //         }
+        //         ListNode next = temp.next;
+        //         temp.next = null;
+        //         lists[i] = temp;
+        //         temp = next;
+        //     }
+        //     return lists;
+        // }
+        
+        int val = size / k;
+        int reminder = size % k;
+    
+        ListNode prev = null;
+        ListNode curr = head;
+        for (int i = 0; i < k; i++) {
+            // put val number of nodes
+            ListNode start = curr;      // HOW TO GET THE NODE BEFORE I WANT
+            int c = 0;
+            while (curr != null && c < val) {
+                prev = curr;
+                curr = curr.next;
+                c ++;
+            }
+            if (reminder > 0) {
+                prev = curr; //4
+                curr = curr.next; //5
+                reminder--;
+            }
+            // if prev == null, means no nodes to put
+            if (prev != null) {
+                prev.next = null;
+            }
+            
+            ListNode next = curr;
+            
+            lists[i] = start;
+        
+            prev = curr;
+        }  
+        
+        return lists;
+    }
+}
+```
+
+## 109. Convert Sorted List to Binary Search Tree
+
+
+
+Given the `head` of a singly linked list where elements are **sorted in ascending order**, convert it to a height balanced BST.
+
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of _every_ node never differ by more than 1.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/08/17/linked.jpg)
+
+```
+Input: head = [-10,-3,0,5,9]
+Output: [0,-3,9,-10,null,5]
+Explanation: One possible answer is [0,-3,9,-10,null,5], which represents the shown height balanced BST.
+```
+
+**Example 2:**
+
+```
+Input: head = []
+Output: []
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in `head` is in the range `[0, 2 * 104]`.
+* `-105 <= Node.val <= 105`
+
+找mid的点，然后把mid的点左半边和右半边分别递归
+
+```
+class Solution {
+    public TreeNode sortedListToBST(ListNode head) {
+        // get the root at index i
+        // build left subtree and right subtree [0, i-1] [i+1, end]
+        
+        if (head == null) {
+            return null;
+        }
+        
+        if (head.next == null) {
+            return new TreeNode(head.val);
+        }
+        
+        // get the mid of linked list - as the root
+        ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        // System.out.println(prev.val);
+        ListNode mid = prev.next;
+        TreeNode root = new TreeNode(mid.val);
+        
+        prev.next = null;
+        ListNode left = head;
+        ListNode right = mid.next;
+        
+        
+        TreeNode leftNode = sortedListToBST(left);
+        TreeNode rightNode = sortedListToBST(right);
+        
+        if (leftNode != null) {
+             root.left = leftNode;
+        }
+        
+        if (rightNode != null) {
+            root.right = rightNode;
+        }
+     
+        return root;
+    }
+}
+```
+
+## 24. Swap Nodes in Pairs
+
+
+
+Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/10/03/swap\_ex1.jpg)
+
+```
+Input: head = [1,2,3,4]
+Output: [2,1,4,3]
+```
+
+**Example 2:**
+
+```
+Input: head = []
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: head = [1]
+Output: [1]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the list is in the range `[0, 100]`.
+* `0 <= Node.val <= 100`
+
+```
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        
+        ListNode prev = dummy;
+        ListNode curr = head;
+        // p c c.n
+        //   1 2    3   4 
+        //          n
+        // p.next = 2
+        // 2.next = 1
+        
+        while (curr != null && curr.next != null) {
+            ListNode firstNode = curr;
+            ListNode secondNode = curr.next;
+            
+            prev.next = secondNode; // make firstNode not connect to others
+            // p - 1 - 2 - 3
+            // p - 2   1 - 3
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
+            
+            prev = firstNode;
+            curr = firstNode.next;
+        }
+        
+        return dummy.next;
+    }
+}
+```
