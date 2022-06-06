@@ -92,6 +92,7 @@
   * [1319. Number of Operations to Make Network Connected](leetcode/union-find/1319.-number-of-operations-to-make-network-connected.md)
 * [Algorithms](leetcode/algorithms/README.md)
   * [Problems](leetcode/algorithms/problems.md)
+  * [Tree](leetcode/algorithms/tree.md)
   * [Linked List](leetcode/algorithms/linked-list/README.md)
     * [Easy Linked List Questions](leetcode/algorithms/linked-list/easy-linked-list-questions.md)
     * [Medium Linked List Question](leetcode/algorithms/linked-list/medium-linked-list-question.md)
