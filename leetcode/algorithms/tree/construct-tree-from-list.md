@@ -369,5 +369,157 @@ class Solution {
 }
 ```
 
+## 114. Flatten Binary Tree to Linked List
+
+Given the `root` of a binary tree, flatten the tree into a "linked list":
+
+* The "linked list" should use the same `TreeNode` class where the `right` child pointer points to the next node in the list and the `left` child pointer is always `null`.
+* The "linked list" should be in the same order as a [**pre-order traversal**](https://en.wikipedia.org/wiki/Tree\_traversal#Pre-order,\_NLR) of the binary tree.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/01/14/flaten.jpg)
+
+```
+Input: root = [1,2,5,3,4,null,6]
+Output: [1,null,2,null,3,null,4,null,5,null,6]
+```
+
+**Example 2:**
+
+```
+Input: root = []
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: root = [0]
+Output: [0]
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the tree is in the range `[0, 2000]`.
+* `-100 <= Node.val <= 100`
+
+&#x20;
+
+**Follow up:** Can you flatten the tree in-place (with `O(1)` extra space)?
+
+返回left subtree的最后一个tree node
+
+```
+class Solution {
+    public void flatten(TreeNode root) {
+        helper(root);
+        return root;
+    }
+    
+    // need to know the last node of left subtree
+    // return the last node of the current linked list
+    public TreeNode helper(TreeNode root) {
+        // not sure what should be the base case
+        if (root == null) {
+            return null;
+        }
+        
+        TreeNode leftTail = helper(root.left);
+        TreeNode rightTail = helper(root.right);
+        
+        TreeNode tail = null;
+        if (leftTail != null) {
+            leftTail.next = root;
+            root.left = null;
+            
+        } 
+        
+        if (root.right == null) {
+            return root;
+        } else {
+            return rightTail;
+        }
+    }
+}
+```
+
+## 1008. Construct Binary Search Tree from Preorder Traversal
 
 
+
+Given an array of integers preorder, which represents the **preorder traversal** of a BST (i.e., **binary search tree**), construct the tree and return _its root_.
+
+It is **guaranteed** that there is always possible to find a binary search tree with the given requirements for the given test cases.
+
+A **binary search tree** is a binary tree where for every node, any descendant of `Node.left` has a value **strictly less than** `Node.val`, and any descendant of `Node.right` has a value **strictly greater than** `Node.val`.
+
+A **preorder traversal** of a binary tree displays the value of the node first, then traverses `Node.left`, then traverses `Node.right`.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2019/03/06/1266.png)
+
+```
+Input: preorder = [8,5,1,7,10,12]
+Output: [8,5,10,1,7,null,12]
+```
+
+**Example 2:**
+
+```
+Input: preorder = [1,3]
+Output: [1,null,3]
+```
+
+&#x20;
+
+**Constraints:**
+
+* `1 <= preorder.length <= 100`
+* `1 <= preorder[i] <= 1000`
+* All the values of `preorder` are **unique**.
+
+// binary search tree: any node in left subtree < root and right subtree > root, 所以要找到右边开始的点的话，就只需要找比root大的点就行了
+
+```
+class Solution {
+    public TreeNode bstFromPreorder(int[] preorder) {
+        // preorder root left right
+        // binary search tree: any node in left subtree < root and right subtree > root
+        return helper(preorder, 0, preorder.length - 1);
+    }
+    
+    private TreeNode helper(int[] preorder, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        if (start == end) {
+            return new TreeNode(preorder[start]);
+        }
+        
+        TreeNode root = new TreeNode(preorder[start]);
+        
+        int startOfRight = start;
+        for (int i = start; i <= end; i++) {
+            if (preorder[i] > root.val) {
+                startOfRight = i;
+                break;
+            } else {
+                startOfRight++;
+            }
+        }
+        
+        root.left = helper(preorder, start + 1, startOfRight - 1);
+        root.right = helper(preorder, startOfRight, end);
+        
+        return root;
+    }
+}
+```

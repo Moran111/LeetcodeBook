@@ -117,7 +117,7 @@
     * [88 Merge Sorted Array](leetcode/algorithms/array/88-merge-sorted-array.md)
     * [4. Median of Two Sorted Array (quick select and merge sort)](leetcode/algorithms/array/4.-median-of-two-sorted-array-quick-select-and-merge-sort.md)
   * [Binary Search](leetcode/algorithms/binary-search-basic.md)
-  * [Graph](leetcode/algorithms/graph.md)
+  * [Graph](leetcode/algorithms/dfs.md)
 * [Amazon准备](leetcode/amazon-oa-zhun-bei/README.md)
   * [Maximum product of a triplet (sub-sequence of size 3) in array](leetcode/amazon-oa-zhun-bei/maximum-product-of-a-triplet-sub-sequence-of-size-3-in-array.md)
   * [23. Merge K Sorted Arrays](leetcode/amazon-oa-zhun-bei/23.-merge-k-sorted-arrays.md)

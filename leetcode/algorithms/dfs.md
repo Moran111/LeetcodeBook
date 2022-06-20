@@ -1,4 +1,4 @@
-# DFS
+# Graph
 
 ## 39. Combination Sum
 
