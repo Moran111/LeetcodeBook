@@ -523,3 +523,97 @@ class Solution {
     }
 }
 ```
+
+## 297. Serialize and Deserialize Binary Tree
+
+1. preorder traverse 的时候怎么返回这个tree path. dfs, 顺着树的每一边下去
+2. preorder的时候，每一次的开始的index都是这个tree的root, 仅凭一个preorder就可以建起来个tree吗？是的，建树的思想和recrusion的时候有一点不同. we don't need to know the boundary between left child and right child for one root. We can just take the first index (it should be the root of the current tree).&#x20;
+
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+
+Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.
+
+**Clarification:** The input/output format is the same as [how LeetCode serializes a binary tree](https://leetcode.com/faq/#binary-tree). You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/09/15/serdeser.jpg)
+
+```
+Input: root = [1,2,3,null,null,4,5]
+Output: [1,2,3,null,null,4,5]
+```
+
+**Example 2:**
+
+```
+Input: root = []
+Output: []
+```
+
+&#x20;
+
+\
+\
+
+
+
+
+```
+public class Codec {
+    
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        // preorder traverse 1 2 null null 3 4 null null 5 null null
+        return helper(root, "");  
+    }
+    
+    private String helper(TreeNode root, String res) {
+        if (root == null) {
+            res += "#";
+            res += " ";
+            return res;
+        }
+        
+        res += root.val + " ";
+        res = helper(root.left, res);
+        res = helper(root.right, res);
+        return res;
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        // System.out.println(data);
+        data.trim();
+        String[] str = data.split(" ");
+        List<String> input = new ArrayList(Arrays.asList(str));
+        
+        return create(input);
+    }
+    
+    private TreeNode create(List<String> input) {
+        if (input.size() == 0 || input.get(0).equals("#")) {
+            input.remove(0);
+            return null;
+        }
+        
+        int val = Integer.valueOf(input.get(0));
+        TreeNode root = new TreeNode(val);
+        
+        input.remove(0);
+        root.left = create(input);
+        root.right = create(input);
+        
+        return root;
+    }
+}
+
+// Your Codec object will be instantiated and called as such:
+// Codec ser = new Codec();
+// Codec deser = new Codec();
+// TreeNode ans = deser.deserialize(ser.serialize(root));
+```
+
+&#x20;
