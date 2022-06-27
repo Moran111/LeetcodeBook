@@ -117,6 +117,7 @@
     * [349. Intersection of Two Arrays](leetcode/algorithms/array/349.-intersection-of-two-arrays.md)
     * [88 Merge Sorted Array](leetcode/algorithms/array/88-merge-sorted-array.md)
     * [4. Median of Two Sorted Array (quick select and merge sort)](leetcode/algorithms/array/4.-median-of-two-sorted-array-quick-select-and-merge-sort.md)
+    * [2321 Maximum Score Of Spliced Array](leetcode/algorithms/array/2321-maximum-score-of-spliced-array.md)
   * [Binary Search](leetcode/algorithms/binary-search-basic.md)
   * [Graph](leetcode/algorithms/dfs.md)
 * [Amazon准备](leetcode/amazon-oa-zhun-bei/README.md)
