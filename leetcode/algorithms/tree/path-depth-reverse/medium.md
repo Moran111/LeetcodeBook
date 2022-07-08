@@ -74,7 +74,81 @@ class Solution {
 }
 ```
 
-## 113. Path Sum II & III
+## 113. Path Sum II
+
+Given the `root` of a binary tree and an integer `targetSum`, return _all **root-to-leaf** paths where the sum of the node values in the path equals_ `targetSum`_. Each path should be returned as a list of the node **values**, not node references_.
+
+A **root-to-leaf** path is a path starting from the root and ending at any leaf node. A **leaf** is a node with no children.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/01/18/pathsumii1.jpg)
+
+```
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+Output: [[5,4,11,2],[5,8,4,5]]
+Explanation: There are two paths whose sum equals targetSum:
+5 + 4 + 11 + 2 = 22
+5 + 8 + 4 + 5 = 22
+```
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg)
+
+```
+Input: root = [1,2,3], targetSum = 5
+Output: []
+```
+
+**Example 3:**
+
+```
+Input: root = [1,2], targetSum = 0
+Output: []
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the tree is in the range `[0, 5000]`.
+* `-1000 <= Node.val <= 1000`
+* `-1000 <= targetSum <= 1000`
+
+注意sum是要在return前减，还是在return后减。为什么要同时check root ==null 和是不是leaf呢？因为有可能有root的一边是空的情况，和root是leaf且sum = 0。
+
+```
+class Solution {
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        List<List<Integer>> result = new ArrayList<>();
+        dfs(root, targetSum, new ArrayList<>(), result);
+        return result;
+    }
+    
+    private void dfs(TreeNode root, int sum, 
+                     List<Integer> res, List<List<Integer>> result) {
+        if (root == null) {
+            return;
+        }
+        sum -= root.val; 
+        if (root.left == null && root.right == null) {
+            if (sum == 0) {
+                res.add(root.val);
+                result.add(new ArrayList(res));
+                res.remove(res.size() - 1);
+            }
+            return; // return -> 返回上次层的sum和res
+        }
+        res.add(root.val);
+        dfs(root.left, sum, res, result);
+        dfs(root.right, sum, res, result);
+        res.remove(res.size()-1);
+    }
+}
+```
 
 
 

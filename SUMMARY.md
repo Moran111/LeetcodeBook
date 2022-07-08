@@ -95,7 +95,7 @@
   * [Tree](leetcode/algorithms/tree/README.md)
     * [Tree Traverse](leetcode/algorithms/tree/tree-traverse.md)
     * [Construct Tree From List](leetcode/algorithms/tree/construct-tree-from-list.md)
-    * [Path,Depth,Reverse](leetcode/algorithms/tree/path-depth-reverse/README.md)
+    * [Path,Depth,Reverse](leetcode/algorithms/tree/path-depth-reverse.md)
       * [Medium](leetcode/algorithms/tree/path-depth-reverse/medium.md)
   * [Linked List](leetcode/algorithms/linked-list/README.md)
     * [Easy Linked List Questions](leetcode/algorithms/linked-list/easy-linked-list-questions.md)
