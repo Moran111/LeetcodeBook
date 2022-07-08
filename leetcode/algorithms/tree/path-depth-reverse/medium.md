@@ -150,5 +150,90 @@ class Solution {
 }
 ```
 
+## 437. Path Sum III
 
+
+
+Given the `root` of a binary tree and an integer `targetSum`, return _the number of paths where the sum of the values along the path equals_ `targetSum`.
+
+The path does not need to start or end at the root or a leaf, but it must go downwards (i.e., traveling only from parent nodes to child nodes).
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/04/09/pathsum3-1-tree.jpg)
+
+```
+Input: root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+Output: 3
+Explanation: The paths that sum to 8 are shown.
+```
+
+**Example 2:**
+
+```
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+Output: 3
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the tree is in the range `[0, 1000]`.
+* `-109 <= Node.val <= 109`
+* `-1000 <= targetSum <= 1000`
+
+这个题是从上到下算prefix sum，但是从下到上做recursion，对每一层来说path相加等于sum的个数都是左边的个数 + 右边的个数 + 走到这一层prefixSum + root.val - target的个数。有这个target之后，就能容易的在map里找到 任意一段连续的subarray的合是target的subarray的个数了。
+
+```
+    /*
+    prefix sum: how to find continuous subarrays that sum to target
+    two situation: 
+    1. the subarray we want starts from the beginning of the array
+    2. the subarray we want starts from somewhere in the middle
+    -> how can we find how many subarray we want from case 2,
+    we can have a Map<Sum, Number of times> 
+    current Sum - target = previous sum
+    map.get(previous sum) = how many times the previous some exists
+    previous Sum + [target] = current Sum
+    */
+```
+
+```
+class Solution {
+    //cannot across the parent root
+    //but path cannot start at root or end at leaf
+    public int pathSum(TreeNode root, int targetSum) {
+        // prefix sum, times that prefix sum appeared
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0,1);
+        return helper(root, targetSum, 0, map);
+    }
+    
+    private int helper(TreeNode root, int targetSum, 
+                       int prefixSum,
+                       Map<Integer, Integer> map) {
+        if (root == null) {
+            return 0;
+        }
+        // curr sum
+        int currSum = prefixSum + root.val;
+        // sum we want
+        int prevSum = currSum - targetSum;
+        int count = map.getOrDefault(prevSum, 0);
+        
+        // query first, then update it
+        // 1, target = 0
+        map.put(currSum, map.getOrDefault(currSum, 0) + 1);
+        int left = helper(root.left, targetSum, currSum, map);
+        int right = helper(root.right, targetSum, currSum, map);
+        count = count + left + right;
+        // restore the map, as the recursion goes from the bottom to the top
+        map.put(currSum, map.get(currSum) - 1);
+        return count;
+    }
+}
+```
 
