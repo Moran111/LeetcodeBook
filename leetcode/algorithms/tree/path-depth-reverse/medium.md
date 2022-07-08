@@ -185,7 +185,7 @@ Output: 3
 * `-109 <= Node.val <= 109`
 * `-1000 <= targetSum <= 1000`
 
-这个题是从上到下算prefix sum，但是从下到上做recursion，对每一层来说path相加等于sum的个数都是左边的个数 + 右边的个数 + 走到这一层prefixSum + root.val - target的个数。有这个target之后，就能容易的在map里找到 任意一段连续的subarray的合是target的subarray的个数了。
+这个题是从上到下算prefix sum，但是从下到上做recursion，对每一层来说path sum的个数都是左边的个数 + 右边的个数 + 走到这一层符合条件的个数 （prefixSum + root.val - target的个数）。有这个target之后，就能容易的在map里找到 任意一段连续的subarray的合是target的subarray的个数了。
 
 最后要把map还原。
 
