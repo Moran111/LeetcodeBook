@@ -421,3 +421,111 @@ class Solution {
     }
 }
 ```
+
+## 199. Binary Tree Right Side View
+
+
+
+Given the `root` of a binary tree, imagine yourself standing on the **right side**of it, return _the values of the nodes you can see ordered from top to bottom_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/02/14/tree.jpg)
+
+```
+Input: root = [1,2,3,null,5,null,4]
+Output: [1,3,4]
+```
+
+**Example 2:**
+
+```
+Input: root = [1,null,3]
+Output: [1,3]
+```
+
+**Example 3:**
+
+```
+Input: root = []
+Output: []
+```
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the tree is in the range `[0, 100]`.
+* `-100 <= Node.val <= 100`
+
+```
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<Integer> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        
+        int index = 0;
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+                res.add(index, curr.val);
+                if (curr.left != null) {
+                    queue.offer(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.offer(curr.right);
+                }
+            }
+            index++;
+        }
+        
+        return res.subList(0, index);
+    }
+}
+```
+
+每一层里只加最后一个node，可以有一个prev和curr node，然后在每一层的时候找到最后一个node，加进去, 或者当i = levelLength-1 （是最后一个node的时候） 的时候加入到res里
+
+```
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        if (root == null) return new ArrayList<Integer>();
+        
+        ArrayDeque<TreeNode> queue = new ArrayDeque(){{ offer(root); }};
+        List<Integer> rightside = new ArrayList();
+        
+        while (!queue.isEmpty()) {
+            int levelLength = queue.size();
+
+            for(int i = 0; i < levelLength; ++i) {
+                TreeNode node = queue.poll();
+                // if it's the rightmost element
+                if (i == levelLength - 1) { // last index
+                    rightside.add(node.val);    
+                }
+
+                // add child nodes in the queue
+                if (node.left != null) {
+                    queue.offer(node.left);    
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+        }
+        return rightside;
+    }
+}
+```
+
+
+
+
+
