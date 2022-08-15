@@ -129,6 +129,10 @@ class MyQueue {
 
 I have one input stack, onto which I push the incoming elements, and one output stack, from which I peek/pop. I move elements from input stack to output stack when needed, i.e., when I need to peek/pop but the output stack is empty. When that happens, I move all elements from input to output stack, thereby reversing the order so it's the correct order for peek/pop.
 
+queue and stack have reverse order. So when we call peek or pop, we can convert input stack to reverse order -> in output stack.&#x20;
+
+as long as we have output stack, we can keep pop from it (output stack has correct order). We can put input stack in reverse order in output stack when output stack is empty.
+
 Lets take one example =>\
 (1.) push 1 to 5 (2.) pop (3.)push 6 to 8
 
