@@ -88,3 +88,22 @@ class Solution {
     
 }
 ```
+
+Recursion的做法的话，需要考虑具体怎么做，这种就是说从begin到end是要反转的，那么结果就是（0，begin） + reverse(begin + 1, end) + (end + 1, s.length()).&#x20;
+
+```
+    public String reverseParentheses(String s) {
+        if(s.length() == 0) return "";
+        
+        int begin = 0, end = 0;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == '(') begin = i;
+            if(s.charAt(i) == ')') {
+                end = i;
+                StringBuilder sb = new StringBuilder(s.substring(begin+1, end));
+                return reverseParentheses(s.substring(0, begin) + sb.reverse().toString() + s.substring(end+1));
+            }
+        }
+        return s;
+    }
+```
