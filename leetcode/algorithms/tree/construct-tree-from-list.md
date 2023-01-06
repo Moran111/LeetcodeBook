@@ -184,6 +184,58 @@ public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int
 }
 ```
 
+Udpate:
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return helper(preorder, 0, inorder, 0, inorder.length - 1);
+    }
+
+    private TreeNode helper(int[] preorder, int idx, 
+    int[] inorder, int start, int end) {
+        if (start > end || idx >= preorder.length) {
+            return null;
+        }
+        
+        int val = preorder[idx];
+        TreeNode root = new TreeNode(val);
+        // because preorder and inorder only contians duplicate value
+        // int currIndex = Arrays.binarySearch(inorder, start, end, val);
+        // using the binarySearch will have stack overflow
+        int currIndex = 0;
+        for (int i = start; i <= end; i++) {
+            if (val == inorder[i]) {
+                currIndex = i;
+            }
+        }
+        // in preorder, left subtree root is idx + 1
+        // [3,9,20,15,7]
+        // right subtree root is : curr root idx + (left subtree size) + 1
+        // left subtree size = currIndex - start
+        root.left = helper(preorder, idx + 1, inorder, start, currIndex - 1);
+        root.right = helper(preorder, idx + (currIndex - start) + 1, inorder, 
+        currIndex + 1, end);
+        return root;
+    }
+}
+```
+
 ## 106. Construct Binary Tree from Inorder and Postorder Traversal
 
 
