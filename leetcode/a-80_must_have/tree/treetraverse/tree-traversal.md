@@ -171,3 +171,80 @@ class Solution {
     }
 }
 ```
+
+## 240. Kth Smallest Element in a BST
+
+Given the `root` of a binary search tree, and an integer `k`, return _the_ `kth` _smallest value (**1-indexed**) of all the values of the nodes in the tree_.
+
+&#x20;
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/01/28/kthtree1.jpg)
+
+<pre><code><strong>Input: root = [3,1,4,null,2], k = 1
+</strong><strong>Output: 1
+</strong></code></pre>
+
+**Example 2:**
+
+![](https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg)
+
+<pre><code><strong>Input: root = [5,3,6,2,4,null,null,1], k = 3
+</strong><strong>Output: 3
+</strong></code></pre>
+
+&#x20;
+
+**Constraints:**
+
+* The number of nodes in the tree is `n`.
+* `1 <= k <= n <= 104`
+* `0 <= Node.val <= 104`
+
+&#x20;
+
+**Follow up:** If the BST is modified often (i.e., we can do insert and delete operations) and you need to find the kth smallest frequently, how would you optimize?
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        // binary search tree, inorder traverse using stack, k - 1
+        Stack<TreeNode> stack = new Stack<>();
+        while(root != null) {
+            stack.push(root);
+            root = root.left;
+        }
+        // 5 3 2 1
+        while (!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            k = k-1;
+            if (k == 0) {
+                return curr.val;
+            }
+            // put right's left
+            curr = curr.right;
+            while(curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+        }
+        return -1;
+    }
+}
+```
