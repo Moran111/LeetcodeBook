@@ -191,6 +191,7 @@
   * [Find K Closest Elements](leetcode/binarysearch/find-k-closest-elements.md)
   * [34. Find First and Last Position of Element in Sorted Array](leetcode/binarysearch/34.-find-first-and-last-position-of-element-in-sorted-array.md)
 * [Array](leetcode/array/README.md)
+  * [974. Subarray Sums Divisible by K](leetcode/array/974.-subarray-sums-divisible-by-k.md)
   * [31.Next Permutation](leetcode/array/31.next-permutation.md)
   * [Sort](leetcode/array/sort.md)
   * [Quick Selection](leetcode/array/quick-selection.md)
