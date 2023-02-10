@@ -49,7 +49,7 @@ In merge process, we will move the element smaller than current one to the left 
 
 We keep a **rightcount** to record how many numbers from right\[] we have added and keep an array **count\[]** to record the result. When we move a number from right\[] into the new sorted array, we increase rightcount by 1. When we move a number from left\[] into the new sorted array, we increase count\[ index of the number ] by **rightcount**. (因为目前没有右边没有人比他小了）
 
-![](../../.gitbook/assets/IMG\_2163CD42DF10-1.jpeg)
+![](../../../.gitbook/assets/IMG\_2163CD42DF10-1.jpeg)
 
 count\[] array to store the current index and how many number from it right less than current number .&#x20;
 

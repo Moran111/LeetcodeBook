@@ -176,7 +176,6 @@ class Singleton {
     
     //提供一个静态的共有方法，直接返回SingletonInstance.INSTANCE
     public static Singleton getInstance() {
-        
         return SingletonInstance.INSTANCE;
     }
 }
