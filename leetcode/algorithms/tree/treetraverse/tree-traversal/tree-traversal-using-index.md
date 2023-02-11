@@ -51,7 +51,7 @@ Explanation: The maximum width existing in the second level with the length 2 (3
 
 for this question, for each level, we need to know the left boundary (non null)  and right (non null)boundary in this level -> we need to know the column index in this level, we can use right column index - left column index to know how many nodes we have in this level
 
-![](<../../../../.gitbook/assets/Screen Shot 2022-01-02 at 10.41.41 PM (1).png>)
+![](<../../../../../.gitbook/assets/Screen Shot 2022-01-02 at 10.41.41 PM (1).png>)
 
 column index start from 1. The left node tree is 2 \* its index. right node is 2 \* its index + 1. This is how to calculate for a full binary tree. For this question, even though it is not a full binary tree, it doesn't matter. We want to calculate the diff.&#x20;
 
