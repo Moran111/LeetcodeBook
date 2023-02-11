@@ -4,7 +4,7 @@
 
 rotated sorted array: need to make sure the relationship between two parts
 
-![](../../../.gitbook/assets/IMG\_AFAC1A640E17-1.jpeg)
+![](../../.gitbook/assets/IMG\_AFAC1A640E17-1.jpeg)
 
 ### 33. Search in Rotated Sorted Array
 

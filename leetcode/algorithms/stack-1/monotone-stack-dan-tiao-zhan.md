@@ -1,4 +1,4 @@
-# Monotone Stack (单调栈）
+# Next Greater Element
 
 比当前元素更大的下一个元素
 
@@ -129,4 +129,4 @@ class Solution {
 }
 ```
 
-## 739. Daily Temperatures&#x20;
+&#x20;

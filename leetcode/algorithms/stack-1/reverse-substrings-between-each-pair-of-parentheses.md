@@ -1,4 +1,4 @@
-# Stack Part2
+# Reverse Substrings Between Each Pair of Parentheses
 
 ## 1190. Reverse Substrings Between Each Pair of Parentheses
 
@@ -16,7 +16,8 @@ Your result should **not** contain any brackets.
 
 <pre><code>Input: s = "(abcd)"
 <strong>Output:
-</strong> "dcba"</code></pre>
+</strong> "dcba"
+</code></pre>
 
 **Example 2:**
 
@@ -24,7 +25,8 @@ Your result should **not** contain any brackets.
 <strong>Output:
 </strong> "iloveu"
 <strong>Explanation:
-</strong> The substring "love" is reversed first, then the whole string is reversed.</code></pre>
+</strong> The substring "love" is reversed first, then the whole string is reversed.
+</code></pre>
 
 **Example 3:**
 
@@ -32,7 +34,8 @@ Your result should **not** contain any brackets.
 <strong>Output:
 </strong> "leetcode"
 <strong>Explanation:
-</strong> First, we reverse the substring "oc", then "etco", and finally, the whole string.</code></pre>
+</strong> First, we reverse the substring "oc", then "etco", and finally, the whole string.
+</code></pre>
 
 &#x20;
 

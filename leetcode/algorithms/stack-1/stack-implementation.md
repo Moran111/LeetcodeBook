@@ -1,4 +1,4 @@
-# Normal Stack
+# Stack Implementation
 
 ## 232. Implement Queue using Stacks
 
