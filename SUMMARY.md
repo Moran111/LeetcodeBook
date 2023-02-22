@@ -144,6 +144,7 @@
     * [Others](leetcode/a-80\_must\_have/graph/others/README.md)
       * [959. Regions Cut By Slashes](leetcode/a-80\_must\_have/graph/others/959.-regions-cut-by-slashes.md)
   * [DFS](leetcode/search/README.md)
+    * [44. Wildcard Matching](leetcode/algorithms/search/44.-wildcard-matching.md)
     * [131. Palindrome Partitioning (basic)](leetcode/algorithms/search/131.-palindrome-partitioning-basic.md)
     * [301. Remove Invalid Parentheses](leetcode/algorithms/search/301.-remove-invalid-parentheses.md)
     * [139. Work Break](leetcode/algorithms/search/139.-work-break.md)
