@@ -143,6 +143,7 @@
     * [Others](leetcode/a-80\_must\_have/graph/others/README.md)
       * [959. Regions Cut By Slashes](leetcode/a-80\_must\_have/graph/others/959.-regions-cut-by-slashes.md)
   * [DFS](leetcode/search/README.md)
+    * [Word Pattern I & II](leetcode/algorithms/search/word-pattern-i-and-ii.md)
     * [681. Next Closest Time](leetcode/algorithms/search/681.-next-closest-time.md)
     * [44. Wildcard Matching](leetcode/algorithms/search/44.-wildcard-matching.md)
     * [131. Palindrome Partitioning (basic)](leetcode/algorithms/search/131.-palindrome-partitioning-basic.md)
