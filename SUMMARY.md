@@ -2,7 +2,8 @@
 
 ## leetcode
 
-* [Algorithms](README.md)
+* [Blind75](README.md)
+* [Algorithms](<README (1).md>)
   * [Tree](leetcode/algorithms/tree/README.md)
     * [Construct Tree From List](leetcode/algorithms/tree/construct-tree-from-list.md)
     * [Path,Depth,Reverse](leetcode/algorithms/tree/path-depth-reverse.md)

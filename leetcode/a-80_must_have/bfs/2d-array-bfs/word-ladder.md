@@ -8,7 +8,7 @@ Transformation rule such that:
 1. Only one letter can be changed at a time
 2. Each intermediate word must exist in the dictionary. (Start and end words do not need to appear in the dictionary )
 
-***
+
 
 _Contact me on wechat to get more tips and learning materials . (wechat id : jiuzhang15)_
 
