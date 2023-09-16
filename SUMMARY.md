@@ -3,6 +3,7 @@
 ## leetcode
 
 * [Blind75](README.md)
+  * [Tree](leetcode/blind75/tree.md)
   * [Array](leetcode/blind75/array/README.md)
     * [128. Longest Consecutive Sequence](leetcode/blind75/array/128.-longest-consecutive-sequence.md)
     * [271. Encode and Decode Strings](leetcode/blind75/array/271.-encode-and-decode-strings.md)
