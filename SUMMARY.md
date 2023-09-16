@@ -3,7 +3,10 @@
 ## leetcode
 
 * [Blind75](README.md)
-* [Algorithms](<README (1).md>)
+  * [Array](leetcode/blind75/array/README.md)
+    * [347. Top K Frequent Elements](leetcode/blind75/array/347.-top-k-frequent-elements.md)
+    * [49. Group Anagrams](leetcode/blind75/array/49.-group-anagrams.md)
+* [Algorithms](README.md)
   * [Tree](leetcode/algorithms/tree/README.md)
     * [Construct Tree From List](leetcode/algorithms/tree/construct-tree-from-list.md)
     * [Path,Depth,Reverse](leetcode/algorithms/tree/path-depth-reverse.md)
