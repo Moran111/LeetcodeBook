@@ -4,6 +4,9 @@
 
 * [Blind75](README.md)
   * [Array](leetcode/blind75/array/README.md)
+    * [128. Longest Consecutive Sequence](leetcode/blind75/array/128.-longest-consecutive-sequence.md)
+    * [271. Encode and Decode Strings](leetcode/blind75/array/271.-encode-and-decode-strings.md)
+    * [238. Product of Array Except Self](leetcode/blind75/array/238.-product-of-array-except-self.md)
     * [347. Top K Frequent Elements](leetcode/blind75/array/347.-top-k-frequent-elements.md)
     * [49. Group Anagrams](leetcode/blind75/array/49.-group-anagrams.md)
 * [Algorithms](README.md)
