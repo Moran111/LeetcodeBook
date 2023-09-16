@@ -1,2 +1,2 @@
-# Blind75
+# Algorithms
 
