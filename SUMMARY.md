@@ -3,6 +3,9 @@
 ## leetcode
 
 * [Blind75](README.md)
+  * [Slinding Window](leetcode/blind75/slinding-window/README.md)
+    * [76. Minimum Window Substring](leetcode/blind75/slinding-window/76.-minimum-window-substring.md)
+    * [424. Longest Repeating Character Replacement](leetcode/blind75/slinding-window/424.-longest-repeating-character-replacement.md)
   * [Two Pointer](leetcode/blind75/two-pointer/README.md)
     * [11. Container With Most Water](leetcode/blind75/two-pointer/11.-container-with-most-water.md)
     * [15. 3Sum](leetcode/blind75/two-pointer/15.-3sum.md)
