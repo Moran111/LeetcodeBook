@@ -10,6 +10,7 @@
     * [11. Container With Most Water](leetcode/blind75/two-pointer/11.-container-with-most-water.md)
     * [15. 3Sum](leetcode/blind75/two-pointer/15.-3sum.md)
   * [Tree](leetcode/blind75/tree/README.md)
+    * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
   * [Array](leetcode/blind75/array/README.md)
     * [128. Longest Consecutive Sequence](leetcode/blind75/array/128.-longest-consecutive-sequence.md)
