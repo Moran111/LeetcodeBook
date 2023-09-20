@@ -10,6 +10,7 @@
     * [11. Container With Most Water](leetcode/blind75/two-pointer/11.-container-with-most-water.md)
     * [15. 3Sum](leetcode/blind75/two-pointer/15.-3sum.md)
   * [Tree](leetcode/blind75/tree/README.md)
+    * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/blind75/tree/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/blind75/tree/236.-lowest-common-ancestor-of-a-binary-tree.md)
     * [124. Binary Tree Maximum Path Sum](leetcode/blind75/tree/124.-binary-tree-maximum-path-sum.md)
     * [297. Serialize and Deserialize Binary Tree](leetcode/blind75/tree/297.-serialize-and-deserialize-binary-tree.md)
