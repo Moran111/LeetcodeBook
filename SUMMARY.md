@@ -4,6 +4,7 @@
 
 * [Blind75](README.md)
   * [Graph](leetcode/blind75/graph/README.md)
+    * [207. Course Schedule](leetcode/blind75/graph/207.-course-schedule.md)
     * [417. Pacific Atlantic Water Flow](leetcode/blind75/graph/417.-pacific-atlantic-water-flow.md)
     * [133. Clone Graph](leetcode/blind75/graph/133.-clone-graph.md)
   * [Slinding Window](leetcode/blind75/slinding-window/README.md)
