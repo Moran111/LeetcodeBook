@@ -3,6 +3,8 @@
 ## leetcode
 
 * [Blind75](README.md)
+  * [Intervals](leetcode/blind75/intervals/README.md)
+    * [57. Insert Interval](leetcode/blind75/intervals/57.-insert-interval.md)
   * [Backtrakcing](leetcode/blind75/backtrakcing/README.md)
     * [39. Combination Sum](leetcode/blind75/backtrakcing/39.-combination-sum.md)
     * [79. Word Search](leetcode/blind75/backtrakcing/79.-word-search.md)
