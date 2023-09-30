@@ -30,6 +30,8 @@
     * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
   * [Array](leetcode/blind75/array/README.md)
+    * [Math](leetcode/blind75/array/math/README.md)
+      * [48. Rotate Image](leetcode/blind75/array/math/48.-rotate-image.md)
     * [128. Longest Consecutive Sequence](leetcode/blind75/array/128.-longest-consecutive-sequence.md)
     * [271. Encode and Decode Strings](leetcode/blind75/array/271.-encode-and-decode-strings.md)
     * [238. Product of Array Except Self](leetcode/blind75/array/238.-product-of-array-except-self.md)
