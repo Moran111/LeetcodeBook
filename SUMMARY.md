@@ -7,6 +7,7 @@
     * [57. Insert Interval](leetcode/blind75/intervals/57.-insert-interval.md)
     * [435. Non-overlapping Intervals](leetcode/blind75/intervals/435.-non-overlapping-intervals.md)
   * [DP](leetcode/blind75/dp/README.md)
+    * [300. Longest Increasing Subsequence](leetcode/blind75/dp/300.-longest-increasing-subsequence.md)
     * [91. Decode Ways](leetcode/blind75/dp/91.-decode-ways.md)
     * [322. Coin Change](leetcode/blind75/dp/322.-coin-change.md)
   * [Backtrakcing](leetcode/blind75/backtrakcing/README.md)
