@@ -3,6 +3,8 @@
 ## leetcode
 
 * [Blind75](README.md)
+  * [Stack](leetcode/blind75/stack/README.md)
+    * [155. Min Stack](leetcode/blind75/stack/155.-min-stack.md)
   * [Intervals](leetcode/blind75/intervals/README.md)
     * [57. Insert Interval](leetcode/blind75/intervals/57.-insert-interval.md)
     * [435. Non-overlapping Intervals](leetcode/blind75/intervals/435.-non-overlapping-intervals.md)
@@ -33,6 +35,7 @@
     * [105. Construct Binary Tree from Preorder and Inorder Traversal](leetcode/blind75/tree/105.-construct-binary-tree-from-preorder-and-inorder-traversal.md)
     * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
+  * [Heap](leetcode/blind75/heap.md)
   * [Array](leetcode/blind75/array/README.md)
     * [Math](leetcode/blind75/array/math/README.md)
       * [48. Rotate Image](leetcode/blind75/array/math/48.-rotate-image.md)
