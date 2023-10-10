@@ -5,6 +5,7 @@
 * [Blind75](README.md)
   * [Stack](leetcode/blind75/stack/README.md)
     * [155. Min Stack](leetcode/blind75/stack/155.-min-stack.md)
+    * [739. Daily Temperatures](leetcode/blind75/stack/739.-daily-temperatures.md)
     * [150. Evaluate Reverse Polish Notation](leetcode/blind75/stack/150.-evaluate-reverse-polish-notation.md)
   * [Intervals](leetcode/blind75/intervals/README.md)
     * [57. Insert Interval](leetcode/blind75/intervals/57.-insert-interval.md)
