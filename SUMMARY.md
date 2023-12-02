@@ -40,6 +40,7 @@
     * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
   * [Heap](leetcode/blind75/heap/README.md)
+    * [2542. Maximum Subsequence Score](leetcode/blind75/heap/2542.-maximum-subsequence-score.md)
     * [373. Find K Pairs with Smallest Sums](leetcode/blind75/heap/373.-find-k-pairs-with-smallest-sums.md)
     * [215. Kth Largest Element in an Array](leetcode/blind75/heap/215.-kth-largest-element-in-an-array.md)
     * [703. Kth Largest Element in a Stream](leetcode/blind75/heap/703.-kth-largest-element-in-a-stream.md)
