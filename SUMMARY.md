@@ -41,6 +41,7 @@
     * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
   * [Heap](leetcode/blind75/heap/README.md)
+    * [find Kth largest or smallest number](leetcode/blind75/heap/find-kth-largest-or-smallest-number.md)
     * [Type3 (事后小诸葛)](leetcode/blind75/heap/type3-shi-hou-xiao-zhu-ge/README.md)
       * [1642. Furthest Building You Can Reach](leetcode/blind75/heap/type3-shi-hou-xiao-zhu-ge/1642.-furthest-building-you-can-reach.md)
     * [多路归并](leetcode/blind75/heap/duo-lu-gui-bing/README.md)
