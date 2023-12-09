@@ -41,6 +41,7 @@
       * [返回一个list/array](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/README.md)
         * [894. All Possible Full Binary Trees](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/894.-all-possible-full-binary-trees.md)
         * [865. Smallest Subtree with all the Deepest Nodes](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/865.-smallest-subtree-with-all-the-deepest-nodes.md)
+    * [修改tree](leetcode/blind75/tree/xiu-gai-tree.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/blind75/tree/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/blind75/tree/236.-lowest-common-ancestor-of-a-binary-tree.md)
     * [124. Binary Tree Maximum Path Sum](leetcode/blind75/tree/124.-binary-tree-maximum-path-sum.md)
