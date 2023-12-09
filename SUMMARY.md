@@ -42,6 +42,7 @@
         * [894. All Possible Full Binary Trees](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/894.-all-possible-full-binary-trees.md)
         * [865. Smallest Subtree with all the Deepest Nodes](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/865.-smallest-subtree-with-all-the-deepest-nodes.md)
     * [Modify Tree](leetcode/blind75/tree/modify-tree/README.md)
+      * [1325. Delete Leaves With a Given Value](leetcode/blind75/tree/modify-tree/1325.-delete-leaves-with-a-given-value.md)
       * [814. Binary Tree Pruning](leetcode/blind75/tree/modify-tree/814.-binary-tree-pruning.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/blind75/tree/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/blind75/tree/236.-lowest-common-ancestor-of-a-binary-tree.md)
