@@ -38,6 +38,8 @@
         * [1448. Count Good Nodes in Binary Tree](leetcode/blind75/tree/search/can-shu-kuo-zhan-da-fa/1448.-count-good-nodes-in-binary-tree.md)
         * [129. Sum Root to Leaf Numbers](leetcode/blind75/tree/search/can-shu-kuo-zhan-da-fa/129.-sum-root-to-leaf-numbers.md)
         * [1026. Maximum Difference Between Node and AncestorMedium4.2K101](leetcode/blind75/tree/search/can-shu-kuo-zhan-da-fa/1026.-maximum-difference-between-node-and-ancestormedium4.2k101.md)
+      * [返回一个list/array](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/README.md)
+        * [865. Smallest Subtree with all the Deepest Nodes](leetcode/blind75/tree/search/fan-hui-yi-ge-listarray/865.-smallest-subtree-with-all-the-deepest-nodes.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/blind75/tree/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/blind75/tree/236.-lowest-common-ancestor-of-a-binary-tree.md)
     * [124. Binary Tree Maximum Path Sum](leetcode/blind75/tree/124.-binary-tree-maximum-path-sum.md)
