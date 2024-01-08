@@ -401,7 +401,7 @@ class Node {
 
 ![pac](https://leetcode.com/problems/inorder-successor-in-bst-ii/solutions/306596/Figures/510/case.png)
 
-
+***
 
 ![fic](https://leetcode.com/problems/inorder-successor-in-bst-ii/solutions/306596/Figures/510/casenull.png)
 
