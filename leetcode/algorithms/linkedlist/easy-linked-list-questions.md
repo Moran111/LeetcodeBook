@@ -124,7 +124,7 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 
 **Example 2:**
 
-![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist\_test2.png)
+![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png)
 
 ```
 Input: head = [1,2], pos = 0
@@ -134,7 +134,7 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 
 **Example 3:**
 
-![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist\_test3.png)
+![](https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png)
 
 ```
 Input: head = [1], pos = -1
@@ -446,7 +446,7 @@ Solution: find the mid of the linked list and reverse second part of the linked 
 
 1. find the mid node in the linked list  (slow and fast pointer). slow pointer move one step each time, and fast pointer move two step each time, different ways to write while condition will result to find different poisition of the mid point for even number of list. In this problem, we need to find the **end node of the first part of list. We want the loop stoped when f.next.next == null**
 
- **为什么快慢指针可以找到中点？**同化成一个路程问题，同一段路程，A的速度是B的两倍，他们同时出发，当A走完全程时，B也就刚好走过一半
+ **为什么快慢指针可以找到中点？**&#x540C;化成一个路程问题，同一段路程，A的速度是B的两倍，他们同时出发，当A走完全程时，B也就刚好走过一半
 
 ```
         // while fast.next != null && fast.next.next != null
@@ -542,7 +542,7 @@ Given the heads of two singly linked-lists `headA` and `headB`, return _the node
 
 For example, the following two linked lists begin to intersect at node `c1`:
 
-![](https://assets.leetcode.com/uploads/2021/03/05/160\_statement.png)
+![](https://assets.leetcode.com/uploads/2021/03/05/160_statement.png)
 
 The test cases are generated such that there are no cycles anywhere in the entire linked structure.
 
@@ -564,7 +564,7 @@ The judge will then create the linked structure based on these inputs and pass t
 
 **Example 1:**
 
-![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_1\_1.png)
+![](https://assets.leetcode.com/uploads/2021/03/05/160_example_1_1.png)
 
 ```
 Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
@@ -575,7 +575,7 @@ From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,
 
 **Example 2:**
 
-![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_2.png)
+![](https://assets.leetcode.com/uploads/2021/03/05/160_example_2.png)
 
 ```
 Input: intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
@@ -586,7 +586,7 @@ From the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,
 
 **Example 3:**
 
-![](https://assets.leetcode.com/uploads/2021/03/05/160\_example\_3.png)
+![](https://assets.leetcode.com/uploads/2021/03/05/160_example_3.png)
 
 ```
 Input: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
@@ -635,7 +635,7 @@ In code, we could write this algorithm with 4 loops, one after the other, each d
 
 While this would have a time complexity of O(N+M)O(N+M) and a space complexity of O(1)O(1)and would be fine for an interview, we can still simplify the code a bit! As some quick reassurance, most people will struggle to come up with this next part by themselves. It takes practice and seeing lots of linked list and other math problems.
 
-**If we say that cc is the **_**shared**_** part, aa is **_**exclusive part of list A**_** and bb is **_**exclusive part of list B**_**, then we can have one pointer that goes over `a + c + b` and the other that goes over `b + c + a`. Have a look at the diagram below, and this should be fairly intuitive.**
+**If we say that cc is the&#x20;**_**shared**_**&#x20;part, aa is&#x20;**_**exclusive part of list A**_**&#x20;and bb is&#x20;**_**exclusive part of list B**_**, then we can have one pointer that goes over `a + c + b` and the other that goes over `b + c + a`. Have a look at the diagram below, and this should be fairly intuitive.**
 
 ![Diagram showing that one pointer could go over a + c + b while the other goes over b + c + a, and then both will end up on the intersection node.](https://leetcode.com/problems/Figures/160/image4.png)
 
@@ -681,7 +681,7 @@ Return _the head of the merged linked list_.
 
 **Example 1:**
 
-![](https://assets.leetcode.com/uploads/2020/10/03/merge\_ex1.jpg)
+![](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)
 
 ```
 Input: list1 = [1,2,4], list2 = [1,3,4]

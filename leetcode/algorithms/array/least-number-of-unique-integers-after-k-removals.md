@@ -4,7 +4,7 @@
 
 1481\. Least Number of Unique Integers after K RemovalsMedium53450Add to ListShare
 
-Given an array of integers `arr` and an integer `k`. Find the _least number of unique integers_ after removing **exactly** `k` elements**.**
+Given an array of integers `arr` and an integer `k`. Find the _least number of unique integers_ after removing **exactly** `k` element&#x73;**.**
 
 1.
 
