@@ -16,6 +16,7 @@
     * [300. Longest Increasing Subsequence](leetcode/blind75/dp/300.-longest-increasing-subsequence.md)
     * [91. Decode Ways](leetcode/blind75/dp/91.-decode-ways.md)
     * [322. Coin Change](leetcode/blind75/dp/322.-coin-change.md)
+    * [139. Word Break](leetcode/blind75/dp/139.-word-break.md)
   * [Backtrakcing](leetcode/blind75/backtrakcing/README.md)
     * [39. Combination Sum](leetcode/blind75/backtrakcing/39.-combination-sum.md)
     * [79. Word Search](leetcode/blind75/backtrakcing/79.-word-search.md)
