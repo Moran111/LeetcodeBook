@@ -59,6 +59,7 @@
     * [105. Construct Binary Tree from Preorder and Inorder Traversal](leetcode/blind75/tree/105.-construct-binary-tree-from-preorder-and-inorder-traversal.md)
     * [98. Validate Binary Search Tree](leetcode/blind75/tree/98.-validate-binary-search-tree.md)
     * [572. Subtree of Another Tree](leetcode/blind75/tree/572.-subtree-of-another-tree.md)
+    * [94. Binary Tree Inorder Traversal](leetcode/blind75/tree/94.-binary-tree-inorder-traversal.md)
   * [Heap](leetcode/blind75/heap/README.md)
     * [find Kth largest or smallest number](leetcode/blind75/heap/find-kth-largest-or-smallest-number/README.md)
       * [2542. Maximum Subsequence Score](leetcode/blind75/heap/find-kth-largest-or-smallest-number/2542.-maximum-subsequence-score.md)
