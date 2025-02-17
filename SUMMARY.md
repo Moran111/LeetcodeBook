@@ -138,6 +138,7 @@
       * [589. N-ary Tree Preorder Traversal](leetcode/algorithms/tree/treetraverse/589.-n-ary-tree-preorder-traversal.md)
       * [590. N-ary Tree Postorder Traversal](leetcode/algorithms/tree/treetraverse/590.-n-ary-tree-postorder-traversal.md)
       * [429. N-ary Tree Level Order Traversal](leetcode/algorithms/tree/treetraverse/429.-n-ary-tree-level-order-traversal.md)
+      * [1302. Deepest Leaves Sum](leetcode/algorithms/tree/treetraverse/1302.-deepest-leaves-sum.md)
   * [Stack](leetcode/algorithms/stack/README.md)
     * [Stack Implementation](leetcode/algorithms/stack/stack-implementation.md)
     * [Reverse Substrings Between Each Pair of Parentheses](leetcode/algorithms/stack/reverse-substrings-between-each-pair-of-parentheses.md)
