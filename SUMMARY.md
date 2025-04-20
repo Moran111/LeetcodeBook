@@ -54,6 +54,7 @@
     * [Modify Tree](leetcode/blind75/tree/modify-tree/README.md)
       * [1325. Delete Leaves With a Given Value](leetcode/blind75/tree/modify-tree/1325.-delete-leaves-with-a-given-value.md)
       * [814. Binary Tree Pruning](leetcode/blind75/tree/modify-tree/814.-binary-tree-pruning.md)
+    * [Kth Smallest Integer in BST](leetcode/blind75/tree/kth-smallest-integer-in-bst.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](leetcode/blind75/tree/235.-lowest-common-ancestor-of-a-binary-search-tree.md)
     * [236. Lowest Common Ancestor of a Binary Tree](leetcode/blind75/tree/236.-lowest-common-ancestor-of-a-binary-tree.md)
     * [124. Binary Tree Maximum Path Sum](leetcode/blind75/tree/124.-binary-tree-maximum-path-sum.md)
