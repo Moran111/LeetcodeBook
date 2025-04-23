@@ -120,3 +120,11 @@ class Solution {
 }
 
 ```
+
+Time complexity:
+
+bfs graph: O(C + E)
+
+* Number of nodes = C
+* Total edges = E (at most C² in worst case)
+
