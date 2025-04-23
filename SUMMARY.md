@@ -27,6 +27,7 @@
     * [79. Word Search](leetcode/blind75/backtrakcing/79.-word-search.md)
     * [22. Generate Parentheses](leetcode/blind75/backtrakcing/22.-generate-parentheses.md)
   * [Graph](leetcode/blind75/graph/README.md)
+    * [Alien Dictionary](leetcode/blind75/graph/alien-dictionary.md)
     * [261. Graph Valid Tree](leetcode/blind75/graph/261.-graph-valid-tree.md)
     * [323. Number of Connected Components in an Undirected Graph](leetcode/blind75/graph/323.-number-of-connected-components-in-an-undirected-graph.md)
     * [207. Course Schedule](leetcode/blind75/graph/207.-course-schedule.md)
